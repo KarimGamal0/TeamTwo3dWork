@@ -6,7 +6,7 @@ public class Resumer : MonoBehaviour
 {
     [SerializeField] GameObject pauseMenu;
     [SerializeField] BoolSO paused;
-    public void Pause()
+    public void Resume()
     {
         pauseMenu.SetActive(false);
         Time.timeScale = 0.0f;

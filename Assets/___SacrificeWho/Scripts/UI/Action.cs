@@ -4,5 +4,10 @@ using UnityEngine;
 
 public class Action : MonoBehaviour
 {
+    [SerializeField] GameObject PlayerCharacter;
   //TODO:player action activation
+  public void PlayerAction()
+    {
+        //PlayerCharacter Execute Action
+    }
 }
