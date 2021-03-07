@@ -17,4 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/___SacrificeWho/Scenes/GameWindowUItest.unity
     guid: f9c3f6fc3c96f6c42a925bb0ff666c5d
+  - enabled: 1
+    path: Assets/___SacrificeWho/GameLevels/Level1.unity
+    guid: 7f7d21321f2cfae4cb40d60440f4a0d9
   m_configObjects: {}
