@@ -248,7 +248,7 @@ MonoBehaviour:
   sounds:
   - name: theme
     clip: {fileID: 8300000, guid: 75e133ca045799745a467f25f83fece6, type: 3}
-    volume: 1
+    volume: 0.5
     loop: 1
     AudioSource: {fileID: 0}
   - name: Win
@@ -294,13 +294,14 @@ MonoBehaviour:
   - name: Step
     clip: {fileID: 8300000, guid: 7276a3c29dee7bc4eae58f61698b2aae, type: 3}
     volume: 1
-    loop: 0
+    loop: 1
     AudioSource: {fileID: 0}
   - name: Switch
     clip: {fileID: 8300000, guid: 172bff30280ad134291681d9482bfb90, type: 3}
     volume: 0
     loop: 0
     AudioSource: {fileID: 0}
+  stepevents: {fileID: 11400000, guid: 3ee00276f582a7d43803a36506f6209f, type: 2}
 --- !u!4 &1827195152
 Transform:
   m_ObjectHideFlags: 0
