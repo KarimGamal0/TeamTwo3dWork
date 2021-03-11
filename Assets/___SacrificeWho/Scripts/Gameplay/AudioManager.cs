@@ -1,36 +1,36 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
+using System;
 public class AudioManager : MonoBehaviour
 {
-    // Start is called before the first frame update
-    [SerializeField] BoolSO walking;
-    [SerializeField] BoolSO falling;
-    [SerializeField] BoolSO won;
-    [SerializeField] BoolSO lost;
-    [SerializeField] BoolSO pressed;
-    [SerializeField] BoolSO swordhit;
-    [SerializeField] BoolSO arrowhit;
-    [SerializeField] BoolSO icehit;
-    [SerializeField] BoolSO jumping;
-    [SerializeField] BoolSO Switch;
-    [SerializeField] AudioSource audioSource;
-    [SerializeField] List<AudioClip> clips = new List<AudioClip>();
+    public Sound[] sounds;
 
-    void Start()
+    private void Awake()
     {
         DontDestroyOnLoad(this);
-        audioSource.loop = true;
+        foreach (Sound sound in sounds)
+        {
+            sound.AudioSource = gameObject.AddComponent<AudioSource>();
+            sound.AudioSource.clip = sound.clip;
+            sound.AudioSource.volume = sound.volume;
+            sound.AudioSource.loop = sound.loop;
+        }
+        FindObjectOfType<AudioManager>().playAudio("theme");
     }
 
-    // Update is called once per frame
-    void Update()
+    public void playAudio(string name)
     {
-        if(walking.state==true)
+        Sound s = Array.Find(sounds, sound => sound.name == name);
+        if (s == null)
         {
-            audioSource.volume = 0.2f;
-            audioSource.PlayOneShot(clips[2]);
+            Debug.LogWarning($"Audio sourec {name} not found");
+            return;
         }
+        s.AudioSource.Play();
 
+        //how to play audio
+        //FindObjectOfType<AudioManager>().playAudio("AudioName");
     }
 }
