@@ -12,6 +12,15 @@ public class BGMToggler : MonoBehaviour
     //TODO:BGM audio toggle
     public void ToggleAudio()
     {
-        if(am.)
+        if ((am.sounds.GetValue(0) as Sound).volume >0.0f)
+        {
+            (am.sounds.GetValue(0) as Sound).loop = false;
+            (am.sounds.GetValue(0) as Sound).volume = 0.0f;
+        }
+        else
+        {
+            (am.sounds.GetValue(0) as Sound).loop = false;
+            (am.sounds.GetValue(0) as Sound).volume = 0.0f;
+        }
     }
 }
