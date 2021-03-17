@@ -8,7 +8,6 @@ public class ThirdPersonController : MonoBehaviour
     [SerializeField] CharacterController controller;
 
     [SerializeField] float speed = 6.0f;
-
     [SerializeField] float turnSmoothTime = 0.1f;
     float turnSmoothVelcocity;
 
@@ -28,10 +27,11 @@ public class ThirdPersonController : MonoBehaviour
 
     void Move()
     {
-        //float horizontal = Input.GetAxis("Horizontal");
-        //float vertical = Input.GetAxis("Vertical");
+        float horizontal = Input.GetAxis("Horizontal");
+        float vertical = Input.GetAxis("Vertical");
 
-        Vector3 direction = new Vector3(movement.value.x, 0.0f, movement.value.z).normalized;
+        //Vector3 direction = new Vector3(movement.value.x, 0.0f, movement.value.z).normalized;
+        Vector3 direction = new Vector3(horizontal, 0.0f, vertical).normalized;
 
         if (direction.magnitude >= 0.1f)
         {
