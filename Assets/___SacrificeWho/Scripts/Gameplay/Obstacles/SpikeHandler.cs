@@ -6,20 +6,22 @@ public class SpikeHandler : MonoBehaviour
 {
 
     private static readonly int IsOpen = Animator.StringToHash("IsOpen");
-    private Animator _Spikeanimator;
+    private Animator[] _Spikeanimator;
 
 
     [SerializeField] MyEventSO killCharcterSO;
-    bool obstacleState = true; 
-
-
+    bool obstacleState = true;
+    BoxCollider spikeGroupCollider;
+    AudioManager soundManager;
 
 
 
     private void Awake()
     {
-        _Spikeanimator = GetComponent<Animator>();
+        _Spikeanimator = GetComponentsInChildren<Animator>();
+        spikeGroupCollider = GetComponent<BoxCollider>();
 
+        spikeGroupCollider.isTrigger = true;
 
     }
 
@@ -27,6 +29,7 @@ public class SpikeHandler : MonoBehaviour
     private void OnTriggerEnter(Collider collision)
 
     {
+ 
         if (obstacleState)
         {
             obstacleState = false; //activate one time 
@@ -36,9 +39,16 @@ public class SpikeHandler : MonoBehaviour
             {
                 Debug.Log("killed by spike");
 
-                _Spikeanimator.SetBool(IsOpen, true);
+                FindObjectOfType<AudioManager>().playAudio("FallOnSpikes");
 
+
+
+                foreach (var spike in _Spikeanimator)
+                {
+                    spike.SetBool(IsOpen, true);
+                }
                 killCharcterSO.Raise();
+
             }
         }
     }

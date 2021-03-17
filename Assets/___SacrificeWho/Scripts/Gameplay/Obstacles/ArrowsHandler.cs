@@ -33,8 +33,9 @@ public class ArrowsHandler : MonoBehaviour
             var Charcter = collision.gameObject.GetComponent<CharacterController>();
             if (Charcter != null)
             {
-                Debug.Log("killed by spike");
+                Debug.Log("killed by arrow");
 
+                FindObjectOfType<AudioManager>().playAudio("ArrowHit");
                 arrowsAnimator.SetBool(IsOpen, true);
                 //todo arrows sound
                 killCharcterSO.Raise();//place listner on your charcter and trigger death function...
