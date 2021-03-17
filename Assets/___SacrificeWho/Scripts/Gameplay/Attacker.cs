@@ -2,8 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Attack : MonoBehaviour
+public class Attacker : MonoBehaviour
 {
+    public bool isActiveController=false;
     bool isAttacking;
 
     Animator anim;
@@ -12,12 +13,12 @@ public class Attack : MonoBehaviour
         anim = GetComponentInChildren<Animator>();
     }
 
-    void Update()
+   public void Attack()
     {
-        if (!isAttacking && Input.GetKeyDown(KeyCode.Mouse0))
+        if (!isAttacking&&isActiveController)
         {
             StartAttacking();
-            anim.SetTrigger("MeleeAttack");
+            anim.SetTrigger("Attack");
             FinishAttacking();
         }
     }

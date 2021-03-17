@@ -17,6 +17,9 @@ public class SwitchCharacter : MonoBehaviour
     [SerializeField] CharacterController knightcontroller;
     [SerializeField] CharacterController archercontroller;
     [SerializeField] CharacterController wizardcontroller;
+    [SerializeField] Attacker knightattacker;
+    [SerializeField] Attacker archerattacker;
+    [SerializeField] Attacker wizardattacker;
     [SerializeField] Transform knightTransform;
     [SerializeField] Transform archerTransform;
     [SerializeField] Transform wizardTransform;
@@ -36,6 +39,9 @@ public class SwitchCharacter : MonoBehaviour
             thirdperson.player = knightTransform;
             jumper.controller = knightcontroller;
             thirdperson.anim = knightavatar;
+            knightattacker.isActiveController = true;
+            archerattacker.isActiveController = false;
+            wizardattacker.isActiveController = false;
             wizardavatar.SetBool("isRunning", false);
             archeravatar.SetBool("isRunning", false);
         }
@@ -48,6 +54,9 @@ public class SwitchCharacter : MonoBehaviour
             thirdperson.player = archerTransform;
             jumper.controller = archercontroller;
             thirdperson.anim = archeravatar;
+            knightattacker.isActiveController = false;
+            archerattacker.isActiveController = true;
+            wizardattacker.isActiveController = false;
             wizardavatar.SetBool("isRunning", false);
             knightavatar.SetBool("isRunning", false);
         }
@@ -60,6 +69,9 @@ public class SwitchCharacter : MonoBehaviour
             thirdperson.player = wizardTransform;
             jumper.controller = wizardcontroller;
             thirdperson.anim = wizardavatar;
+            knightattacker.isActiveController = false;
+            archerattacker.isActiveController = false;
+            wizardattacker.isActiveController = true;
             archeravatar.SetBool("isRunning", false);
             knightavatar.SetBool("isRunning", false);
         }

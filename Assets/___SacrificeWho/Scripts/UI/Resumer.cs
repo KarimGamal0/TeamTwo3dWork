@@ -9,7 +9,7 @@ public class Resumer : MonoBehaviour
     public void Resume()
     {
         pauseMenu.SetActive(false);
-        Time.timeScale = 0.0f;
+        Time.timeScale = 1.0f;
         paused.state = false;
     }
 }
