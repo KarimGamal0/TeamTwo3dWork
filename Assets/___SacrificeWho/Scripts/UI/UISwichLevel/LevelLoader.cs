@@ -8,8 +8,9 @@ using UnityEngine.UI;
 public class LevelLoader : MonoBehaviour
 {
 
- //   [SerializeField] Button back10Levels;
-    GameObject ButtonsHolder_1_10;
+    //   [SerializeField] Button back10Levels;
+    [SerializeField] GameObject ButtonsHolder_1_10;
+    [SerializeField] GameObject ButtonsHolder_11_20;
     [SerializeField] Button navBack;
     [SerializeField] Button navForward;
 
@@ -37,6 +38,11 @@ public class LevelLoader : MonoBehaviour
             if (shiftPage == 2)
             {
                 navBack.gameObject.SetActive(true);
+
+                ButtonsHolder_1_10.SetActive(false);
+                ButtonsHolder_11_20.SetActive(true);
+
+
             }
 
             if (shiftPage == maxPages)
@@ -56,12 +62,16 @@ public class LevelLoader : MonoBehaviour
         if (shiftPage > minPages)
         {
             shiftPage--;
+
+            ButtonsHolder_1_10.SetActive(true);
+            ButtonsHolder_11_20.SetActive(false);
         }
 
 
         if (shiftPage == minPages)
         {
             navBack.gameObject.SetActive(false);
+
         }
 
         if (shiftPage == maxPages-1)
