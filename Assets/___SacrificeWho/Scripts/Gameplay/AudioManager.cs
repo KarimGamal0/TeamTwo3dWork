@@ -6,7 +6,6 @@ using System;
 public class AudioManager : MonoBehaviour
 {
     public Sound[] sounds;
-    [SerializeField] BoolSO stepevents;
     private void Awake()
     {
         DontDestroyOnLoad(this);
@@ -29,10 +28,6 @@ public class AudioManager : MonoBehaviour
             return;
         }
         s.AudioSource.Play();
-        if(stepevents.state)
-        {
-            playAudio("FallOnSpikes");
-        }
         //how to play audio
         //FindObjectOfType<AudioManager>().playAudio("AudioName");
     }
