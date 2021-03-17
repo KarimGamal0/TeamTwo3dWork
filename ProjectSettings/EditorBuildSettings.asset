@@ -12,7 +12,7 @@ EditorBuildSettings:
     path: Assets/___SacrificeWho/Scenes/LevelSelection.unity
     guid: 12339b9352a2b8c42a830a794be8d3a0
   - enabled: 1
-    path: Assets/___SacrificeWho/Scenes/Level.unity
+    path: Assets/___SacrificeWho/Scenes/Level1.unity
     guid: 14b289f1cbf61564ca740cbfe7dae22f
   - enabled: 1
     path: Assets/___SacrificeWho/Scenes/GameWindowUItest.unity

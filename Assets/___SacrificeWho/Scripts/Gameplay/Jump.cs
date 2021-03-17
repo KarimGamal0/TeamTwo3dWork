@@ -20,7 +20,7 @@ public class Jump : MonoBehaviour
 
     void Start()
     {
-        controller = GetComponent<CharacterController>();
+        controller = GetComponentInChildren<CharacterController>();
         anim = GetComponentInChildren<Animator>();
     }
 

@@ -67,7 +67,7 @@ MonoBehaviour:
   - name: FallOnSpikes
     clip: {fileID: 8300000, guid: 6b937e6205f54cd4ca36efc1825f2d75, type: 3}
     volume: 1
-    loop: 1
+    loop: 0
     AudioSource: {fileID: 0}
   - name: Ice
     clip: {fileID: 8300000, guid: 34f1e647ffe401e4e802692e8ffaf558, type: 3}
@@ -99,4 +99,3 @@ MonoBehaviour:
     volume: 0
     loop: 0
     AudioSource: {fileID: 0}
-  stepevents: {fileID: 11400000, guid: 3ee00276f582a7d43803a36506f6209f, type: 2}

@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 151120739178652775}
   - component: {fileID: 3870624079388027842}
   - component: {fileID: 1320627119808569096}
+  - component: {fileID: 2788807233766846427}
   m_Layer: 0
   m_Name: wall
   m_TagString: Untagged
@@ -81,6 +82,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &2788807233766846427
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 671937043718242013}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -3150274663934063206, guid: 4bae19a237df84448957c99e184ee08d, type: 3}
 --- !u!1 &4530247236032672470
 GameObject:
   m_ObjectHideFlags: 0
@@ -92,6 +107,7 @@ GameObject:
   - component: {fileID: 3861128008632658028}
   - component: {fileID: 160617630268614601}
   - component: {fileID: 2728714819787264771}
+  - component: {fileID: 1425600122404746596}
   m_Layer: 0
   m_Name: tower
   m_TagString: Untagged
@@ -162,6 +178,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &1425600122404746596
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4530247236032672470}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 6845062952325140189, guid: ea5fa232e31c08b4e835f6a1c40ccd95, type: 3}
 --- !u!1 &6165322847815494635
 GameObject:
   m_ObjectHideFlags: 0

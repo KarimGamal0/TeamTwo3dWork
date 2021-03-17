@@ -85,7 +85,7 @@ public class LevelLoader : MonoBehaviour
     public  void LoadLevel(string levelNum)
     {
         Debug.Log($"Loading .... Level{levelNum}");
-        SceneManager.LoadScene($"Level {levelNum}");
+        SceneManager.LoadScene($"Level{levelNum}");
 
     }
 }
