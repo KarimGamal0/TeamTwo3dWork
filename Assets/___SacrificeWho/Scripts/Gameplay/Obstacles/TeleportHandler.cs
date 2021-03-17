@@ -6,11 +6,17 @@ public class TeleportHandler : MonoBehaviour
 {
     //add box collider trigger true .... 
      bool teleportState = true;
-    [SerializeField] Vector3 teleportArea;
+    [SerializeField] Transform teleportArea;
 
+    BoxCollider CharcterDetector;
+    private void Awake()
+    {
+        CharcterDetector = GetComponent<BoxCollider>();
+        CharcterDetector.isTrigger = true;
 
+    }
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider collision)
     {
 
         {
@@ -20,7 +26,7 @@ public class TeleportHandler : MonoBehaviour
             {
 
                 Debug.Log("Teleported");
-                Charcter.transform.position = teleportArea;
+                Charcter.transform.position = teleportArea.position;
             }
         }
     }

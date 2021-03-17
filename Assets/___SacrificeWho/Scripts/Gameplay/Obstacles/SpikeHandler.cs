@@ -20,8 +20,12 @@ public class SpikeHandler : MonoBehaviour
     {
         _Spikeanimator = GetComponent<Animator>();
 
+
     }
-    private void OnCollisionEnter(Collision collision)
+
+
+    private void OnTriggerEnter(Collider collision)
+
     {
         if (obstacleState)
         {

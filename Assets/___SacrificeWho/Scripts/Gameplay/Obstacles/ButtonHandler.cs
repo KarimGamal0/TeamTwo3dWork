@@ -54,33 +54,26 @@ public class ButtonHandler : MonoBehaviour
 
 
 
-    private void OnCollisionStay(Collision collision)
+
+    private void OnTriggerStay(Collider collision)
     {
-       var  Charcter= collision.gameObject.GetComponent<CharacterController>();
+        var  Charcter= collision.gameObject.GetComponent<CharacterController>();
         if (Charcter != null)
         {
             triggredNearCharcter = true;
-
         }
     }
-    private void OnCollisionExit(Collision collision)
+
+
+    private void OnTriggerExit(Collider collision)
     {
         var Charcter = collision.gameObject.GetComponent<CharacterController>();
         if (Charcter!=null)
         {
             triggredNearCharcter = false;
-
         }
     }
-    //private void OnTriggerStay(Collider other)
-    //{
-        
-    //}
-
-    //private void OnTriggerExit(Collider other)
-    //{
-        
-    //}
+ 
 }
 
 

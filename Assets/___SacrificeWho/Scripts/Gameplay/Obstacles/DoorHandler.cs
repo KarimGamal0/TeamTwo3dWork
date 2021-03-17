@@ -16,6 +16,8 @@ public class DoorHandler : MonoBehaviour
     private void Awake()
     {
         _animator = GetComponent<Animator>();
+
+
     }
 
     public void Open()
