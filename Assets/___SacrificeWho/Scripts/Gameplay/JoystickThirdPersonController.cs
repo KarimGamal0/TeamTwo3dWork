@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ThirdPersonController : MonoBehaviour
+public class JoystickThirdPersonController : MonoBehaviour
 {
     [SerializeField]public Transform player;
     [SerializeField] public CharacterController controller;
@@ -26,11 +26,9 @@ public class ThirdPersonController : MonoBehaviour
 
     void Move()
     {
-        float horizontal = Input.GetAxis("Horizontal");
-        float vertical = Input.GetAxis("Vertical");
 
-        Vector3 direction = new Vector3(horizontal, 0.0f, vertical).normalized;
-
+        Vector3 direction = new Vector3(movement.value.x, 0.0f, movement.value.z).normalized;
+      
         if (direction.magnitude >= 0.1f)
         {
             anim.SetBool("isRunning", true);

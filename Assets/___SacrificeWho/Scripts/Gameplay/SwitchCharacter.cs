@@ -24,6 +24,7 @@ public class SwitchCharacter : MonoBehaviour
     [SerializeField] Transform archerTransform;
     [SerializeField] Transform wizardTransform;
     [SerializeField] ThirdPersonController thirdperson;
+    [SerializeField] JoystickThirdPersonController JSthirdperson;
     [SerializeField] Jump jumper;
 
     private void Update()
@@ -36,7 +37,10 @@ public class SwitchCharacter : MonoBehaviour
             archer.SetActive(true);
             wizard.SetActive(true);
             thirdperson.controller = knightcontroller;
-            thirdperson.player = knightTransform;
+            thirdperson.player = knightTransform; 
+            JSthirdperson.controller = knightcontroller;
+            JSthirdperson.player = knightTransform;
+
             jumper.controller = knightcontroller;
             thirdperson.anim = knightavatar;
             knightattacker.isActiveController = true;
@@ -52,6 +56,9 @@ public class SwitchCharacter : MonoBehaviour
             wizardFollow.m_Priority = 0;
             thirdperson.controller = archercontroller;
             thirdperson.player = archerTransform;
+            JSthirdperson.controller = archercontroller;
+            JSthirdperson.player = archerTransform;
+
             jumper.controller = archercontroller;
             thirdperson.anim = archeravatar;
             knightattacker.isActiveController = false;
@@ -67,6 +74,8 @@ public class SwitchCharacter : MonoBehaviour
             wizardFollow.m_Priority = 10;
             thirdperson.controller = wizardcontroller;
             thirdperson.player = wizardTransform;
+            JSthirdperson.controller = wizardcontroller;
+            JSthirdperson.player = wizardTransform;
             jumper.controller = wizardcontroller;
             thirdperson.anim = wizardavatar;
             knightattacker.isActiveController = false;
