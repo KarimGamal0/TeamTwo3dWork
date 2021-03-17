@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d6245b3b532a4c44fa1edd0f393f1d63, type: 3}
   m_Name: Walking
   m_EditorClassIdentifier: 
-  state: 0
+  state: 1

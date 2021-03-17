@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Jump : MonoBehaviour
 {
-    [SerializeField] CharacterController controller;
+    [SerializeField]public CharacterController controller;
 
     [SerializeField] bool isGrounded;
     [SerializeField] float groundCheckDistance;
@@ -33,22 +33,22 @@ public class Jump : MonoBehaviour
             velocity.y = -2f;
         }
 
-        if (isGrounded)
-        {
-            if (Input.GetKeyDown(KeyCode.Space))
-            {
-                anim.SetBool("isRunning", false);
-                JumpAction();
-            }
-        }
-
+        //if (isGrounded)
+        //{
+        //    if (Input.GetKeyDown(KeyCode.Space))
+        //    {
+                
+        //        JumpAction();
+        //    }
+        //}
 
         velocity.y += gravity * Time.deltaTime;
         controller.Move(velocity * Time.deltaTime);
     }
 
-    void JumpAction()
+    public void JumpAction()
     {
+        anim.SetBool("isRunning", false);
         velocity.y = Mathf.Sqrt(jumpHeight * -2 * gravity);
     }
 }

@@ -31,7 +31,7 @@ public class AudioManager : MonoBehaviour
         s.AudioSource.Play();
         if(stepevents.state)
         {
-            playAudio("Step");
+            playAudio("FallOnSpikes");
         }
         //how to play audio
         //FindObjectOfType<AudioManager>().playAudio("AudioName");

@@ -4,22 +4,21 @@ using UnityEngine;
 
 public class ThirdPersonController : MonoBehaviour
 {
-    [SerializeField] Transform player;
-    [SerializeField] CharacterController controller;
+    [SerializeField]public Transform player;
+    [SerializeField] public CharacterController controller;
+    public  Animator anim;
 
     [SerializeField] float speed = 6.0f;
     [SerializeField] float turnSmoothTime = 0.1f;
     float turnSmoothVelcocity;
 
-    Animator anim;
 
     [SerializeField] Vector3SO movement;
-    void Start()
+    // Update is called once per frame
+    private void Start()
     {
         anim = GetComponentInChildren<Animator>();
     }
-
-    // Update is called once per frame
     void Update()
     {
         Move();
@@ -27,11 +26,11 @@ public class ThirdPersonController : MonoBehaviour
 
     void Move()
     {
-        float horizontal = Input.GetAxis("Horizontal");
-        float vertical = Input.GetAxis("Vertical");
+        //float horizontal = Input.GetAxis("Horizontal");
+        //float vertical = Input.GetAxis("Vertical");
 
-        //Vector3 direction = new Vector3(movement.value.x, 0.0f, movement.value.z).normalized;
-        Vector3 direction = new Vector3(horizontal, 0.0f, vertical).normalized;
+        Vector3 direction = new Vector3(movement.value.x, 0.0f, movement.value.z).normalized;
+        //Vector3 direction = new Vector3(horizontal, 0.0f, vertical).normalized;
 
         if (direction.magnitude >= 0.1f)
         {

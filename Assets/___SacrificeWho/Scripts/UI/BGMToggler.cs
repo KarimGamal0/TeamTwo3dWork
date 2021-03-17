@@ -4,23 +4,14 @@ using UnityEngine;
 
 public class BGMToggler : MonoBehaviour
 {
-    AudioManager am;
+    AudioSource am;
     private void Start()
     {
-        am = FindObjectOfType<AudioManager>();
+        am = FindObjectOfType<AudioSource>();
     }
     //TODO:BGM audio toggle
     public void ToggleAudio()
     {
-        if ((am.sounds.GetValue(0) as Sound).volume >0.0f)
-        {
-            (am.sounds.GetValue(0) as Sound).loop = false;
-            (am.sounds.GetValue(0) as Sound).volume = 0.0f;
-        }
-        else
-        {
-            (am.sounds.GetValue(0) as Sound).loop = false;
-            (am.sounds.GetValue(0) as Sound).volume = 0.0f;
-        }
+       
     }
 }
