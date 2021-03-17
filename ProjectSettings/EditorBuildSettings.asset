@@ -17,4 +17,34 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/___SacrificeWho/Scenes/GameWindowUItest.unity
     guid: f9c3f6fc3c96f6c42a925bb0ff666c5d
+  - enabled: 1
+    path: Assets/___SacrificeWho/GameLevels/Level 1.unity
+    guid: a9dfee87eaa223c4596ef46276edba26
+  - enabled: 1
+    path: Assets/___SacrificeWho/GameLevels/Level 2.unity
+    guid: cf1e4dcb1a0ce584eb2e0022f3c1a928
+  - enabled: 1
+    path: Assets/___SacrificeWho/GameLevels/Level 3.unity
+    guid: 96fee4fb5e6f1e9479b5d080977f7c1f
+  - enabled: 1
+    path: Assets/___SacrificeWho/GameLevels/Level 4.unity
+    guid: e2fa25afe827b0347b871ab951419bee
+  - enabled: 1
+    path: Assets/___SacrificeWho/GameLevels/Level 5.unity
+    guid: 2b87d51157baaf44995d60db5332dd2d
+  - enabled: 1
+    path: Assets/___SacrificeWho/GameLevels/Level 6.unity
+    guid: c884a50dfa683ff4ab16dc4a51d9f45b
+  - enabled: 1
+    path: Assets/___SacrificeWho/GameLevels/Level 7.unity
+    guid: 72ef32d7447b1db45b203b7430053be9
+  - enabled: 1
+    path: Assets/___SacrificeWho/GameLevels/Level 8.unity
+    guid: 740f734750313d841a763ad012760a3f
+  - enabled: 1
+    path: Assets/___SacrificeWho/GameLevels/Level 9.unity
+    guid: 9473f71196093794b967b37785b8d0f9
+  - enabled: 1
+    path: Assets/___SacrificeWho/GameLevels/Level 10.unity
+    guid: 98d6ecb82c3db804eb767ae9748f9776
   m_configObjects: {}
