@@ -12,6 +12,6 @@ public class BGMToggler : MonoBehaviour
     //TODO:BGM audio toggle
     public void ToggleAudio()
     {
-        if(am.)
+      //  if(am.)
     }
 }

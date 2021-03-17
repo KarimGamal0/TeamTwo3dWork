@@ -26,7 +26,11 @@ public class TeleportHandler : MonoBehaviour
             {
 
                 Debug.Log("Teleported");
-                Charcter.transform.position = teleportArea.position;
+
+                Charcter.enabled = false;
+                Charcter.transform.position = new Vector3(teleportArea.position.x, Charcter.transform.position.y, teleportArea.position.z);
+                Charcter.enabled = true;
+
             }
         }
     }
