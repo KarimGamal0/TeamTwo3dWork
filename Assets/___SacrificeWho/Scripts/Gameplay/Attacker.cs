@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Attacker : MonoBehaviour
 {
-    public bool isActiveController=false;
+    public bool isActiveController = false;
     bool isAttacking;
 
     Animator anim;
@@ -13,9 +13,9 @@ public class Attacker : MonoBehaviour
         anim = GetComponentInChildren<Animator>();
     }
 
-   public void Attack()
+    public void Attack()
     {
-        if (!isAttacking&&isActiveController)
+        if (!isAttacking && isActiveController)
         {
             StartAttacking();
             anim.SetTrigger("Attack");
