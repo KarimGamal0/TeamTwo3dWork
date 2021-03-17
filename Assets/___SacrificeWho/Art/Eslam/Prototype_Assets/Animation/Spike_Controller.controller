@@ -40,7 +40,7 @@ AnimatorStateMachine:
     m_Position: {x: 390, y: 120, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 5174376982674257919}
-    m_Position: {x: 208, y: 185, z: 0}
+    m_Position: {x: 210, y: 180, z: 0}
   m_ChildStateMachines: []
   m_AnyStateTransitions: []
   m_EntryTransitions: []
@@ -125,7 +125,7 @@ AnimatorStateTransition:
   m_TransitionDuration: 0.25
   m_TransitionOffset: 0
   m_ExitTime: 0.75
-  m_HasExitTime: 1
+  m_HasExitTime: 0
   m_HasFixedDuration: 1
   m_InterruptionSource: 0
   m_OrderedInterruption: 1
@@ -138,7 +138,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Spike
-  m_Speed: 1
+  m_Speed: 10
   m_CycleOffset: 0
   m_Transitions: []
   m_StateMachineBehaviours: []
