@@ -17,6 +17,9 @@ public class SwitchCharacter : MonoBehaviour
     [SerializeField] CharacterController knightcontroller;
     [SerializeField] CharacterController archercontroller;
     [SerializeField] CharacterController wizardcontroller;
+    [SerializeField] BoolSO knightdeath;
+    [SerializeField] BoolSO archerdeath;
+    [SerializeField] BoolSO wizarddeath;
     [SerializeField] Attacker knightattacker;
     [SerializeField] Attacker archerattacker;
     [SerializeField] Attacker wizardattacker;
@@ -29,15 +32,81 @@ public class SwitchCharacter : MonoBehaviour
 
     private void Update()
     {
-        if (knight.activeInHierarchy)
+        AutoSwitch();
+    }
+    public void Switch()
+    {
+        if ((!knightdeath.state)&&knightattacker.isActiveController==false)
         {
+            archer.SetActive(true);
+            wizard.SetActive(true);
             knightFollow.m_Priority = 10;
             archerFollow.m_Priority = 0;
             wizardFollow.m_Priority = 0;
+            thirdperson.controller = knightcontroller;
+            thirdperson.player = knightTransform;
+            JSthirdperson.controller = knightcontroller;
+            JSthirdperson.player = knightTransform;
+
+            jumper.controller = knightcontroller;
+            thirdperson.anim = knightavatar;
+            knightattacker.isActiveController = true;
+            archerattacker.isActiveController = false;
+            wizardattacker.isActiveController = false;
+            wizardavatar.SetBool("isRunning", false);
+            archeravatar.SetBool("isRunning", false);
+            //return;
+        }
+       else if ((!archerdeath.state) && archerattacker.isActiveController == false)
+        {
+            knightFollow.m_Priority = 0;
+            archerFollow.m_Priority = 10;
+            wizardFollow.m_Priority = 0;
+            thirdperson.controller = archercontroller;
+            thirdperson.player = archerTransform;
+            JSthirdperson.controller = archercontroller;
+            JSthirdperson.player = archerTransform;
+
+            jumper.controller = archercontroller;
+            thirdperson.anim = archeravatar;
+            knightattacker.isActiveController = false;
+            archerattacker.isActiveController = true;
+            wizardattacker.isActiveController = false;
+            wizardavatar.SetBool("isRunning", false);
+            knightavatar.SetBool("isRunning", false);
+          // return;
+        }
+        else if ((!wizarddeath.state) && wizardattacker.isActiveController == false)
+        {
+            knightFollow.m_Priority = 0;
+            archerFollow.m_Priority = 0;
+            wizardFollow.m_Priority = 10;
+            thirdperson.controller = wizardcontroller;
+            thirdperson.player = wizardTransform;
+            JSthirdperson.controller = wizardcontroller;
+            JSthirdperson.player = wizardTransform;
+            jumper.controller = wizardcontroller;
+            thirdperson.anim = wizardavatar;
+            knightattacker.isActiveController = false;
+            archerattacker.isActiveController = false;
+            wizardattacker.isActiveController = true;
+            archeravatar.SetBool("isRunning", false);
+            knightavatar.SetBool("isRunning", false);
+           // return;
+        }
+    }
+
+    public void AutoSwitch()
+    {
+        if ((!knightdeath.state))
+        {
             archer.SetActive(true);
             wizard.SetActive(true);
+            knightFollow.m_Priority = 10;
+            archerFollow.m_Priority = 0;
+            wizardFollow.m_Priority = 0;
             thirdperson.controller = knightcontroller;
-            thirdperson.player = knightTransform; 
+            thirdperson.player = knightTransform;
             JSthirdperson.controller = knightcontroller;
             JSthirdperson.player = knightTransform;
 
@@ -49,7 +118,7 @@ public class SwitchCharacter : MonoBehaviour
             wizardavatar.SetBool("isRunning", false);
             archeravatar.SetBool("isRunning", false);
         }
-        if (archer.activeInHierarchy&&!knight.activeInHierarchy)
+        if (!archerdeath.state&&knightdeath.state)
         {
             knightFollow.m_Priority = 0;
             archerFollow.m_Priority = 10;
@@ -67,7 +136,7 @@ public class SwitchCharacter : MonoBehaviour
             wizardavatar.SetBool("isRunning", false);
             knightavatar.SetBool("isRunning", false);
         }
-        if (wizard.activeInHierarchy&&!archer.activeInHierarchy && !knight.activeInHierarchy)
+        if (!wizarddeath.state&&archerdeath.state&&knightdeath.state)
         {
             knightFollow.m_Priority = 0;
             archerFollow.m_Priority = 0;
@@ -83,23 +152,6 @@ public class SwitchCharacter : MonoBehaviour
             wizardattacker.isActiveController = true;
             archeravatar.SetBool("isRunning", false);
             knightavatar.SetBool("isRunning", false);
-        }
-    }
-    public void Switch()
-    {
-      if(knight.activeInHierarchy&&archer.activeInHierarchy&&wizard.activeInHierarchy)
-        {
-            knight.SetActive(false);
-        }
-        else if (!knight.activeInHierarchy && archer.activeInHierarchy && wizard.activeInHierarchy)
-        {
-            archer.SetActive(false);
-        }
-        else if (!knight.activeInHierarchy && !archer.activeInHierarchy && wizard.activeInHierarchy)
-        {
-            wizard.SetActive(false);
-            knight.SetActive(true);
-            archer.SetActive(true);
         }
     }
 }
