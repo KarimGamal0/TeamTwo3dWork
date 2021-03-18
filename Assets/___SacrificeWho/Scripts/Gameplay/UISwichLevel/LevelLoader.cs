@@ -9,10 +9,12 @@ public class LevelLoader : MonoBehaviour
 {
 
     //   [SerializeField] Button back10Levels;
+    [SerializeField] Canvas LevelS_UIcanvas;
     [SerializeField] GameObject ButtonsHolder_1_10;
     [SerializeField] GameObject ButtonsHolder_11_20;
     [SerializeField] Button navBack;
     [SerializeField] Button navForward;
+    [SerializeField] Button PlayButtons;
 
     int shiftPage =1;
     int maxPages = 2;
@@ -88,6 +90,24 @@ public class LevelLoader : MonoBehaviour
         SceneManager.LoadScene($"Level{levelNum}");
 
     }
+
+
+
+
+    public void OnPressPlayBtn()
+    {
+        PlayButtons.enabled = false;
+        Debug.Log("AB");
+
+    }
+
+
+    public void LoadMainMenu_UI()
+    {
+        SceneManager.LoadScene($"MainMenu");
+    }
+
+
 }
 
 

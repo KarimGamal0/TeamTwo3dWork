@@ -1319,10 +1319,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d89e33757d2f19469cf1e5b60e54a1b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  LevelS_UIcanvas: {fileID: 0}
   ButtonsHolder_1_10: {fileID: 2603434635891950721}
   ButtonsHolder_11_20: {fileID: 2603434634242681223}
   navBack: {fileID: 2603434635873273433}
   navForward: {fileID: 2603434634578800629}
+  PlayButtons: {fileID: 0}
 --- !u!1 &2603434634123032130
 GameObject:
   m_ObjectHideFlags: 0

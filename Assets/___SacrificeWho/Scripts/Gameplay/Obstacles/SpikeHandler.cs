@@ -13,7 +13,7 @@ public class SpikeHandler : MonoBehaviour
     bool obstacleState = true;
     BoxCollider spikeGroupCollider;
     AudioManager soundManager;
-
+    
 
 
     private void Awake()
