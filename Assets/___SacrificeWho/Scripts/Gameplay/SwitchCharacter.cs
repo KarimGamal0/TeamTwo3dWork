@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Cinemachine;
+using UnityEngine.UI;
+
 public class SwitchCharacter : MonoBehaviour
 {
 
@@ -26,6 +28,10 @@ public class SwitchCharacter : MonoBehaviour
     [SerializeField] Transform knightTransform;
     [SerializeField] Transform archerTransform;
     [SerializeField] Transform wizardTransform;
+    [SerializeField] Button Action;
+    [SerializeField] Sprite sword;
+    [SerializeField] Sprite arrow;
+    [SerializeField] Sprite magic;
     [SerializeField] ThirdPersonController thirdperson;
     [SerializeField] JoystickThirdPersonController JSthirdperson;
     [SerializeField] Jump jumper;
@@ -45,7 +51,7 @@ public class SwitchCharacter : MonoBehaviour
                 wizardFollow.m_Priority = 0;
                 knight.SetActive(false);
                 archer.SetActive(true);
-
+                Action.image.sprite = sword;
                 thirdperson.controller = knightcontroller;
                 thirdperson.player = knightTransform;
                 JSthirdperson.controller = knightcontroller;
@@ -67,6 +73,7 @@ public class SwitchCharacter : MonoBehaviour
                 wizardFollow.m_Priority = 0;
                 archer.SetActive(false);
                 wizard.SetActive(true);
+                Action.image.sprite = arrow;
                 thirdperson.controller = archercontroller;
                 thirdperson.player = archerTransform;
                 JSthirdperson.controller = archercontroller;
@@ -88,6 +95,7 @@ public class SwitchCharacter : MonoBehaviour
                 wizardFollow.m_Priority = 10;
                 knight.SetActive(true);
                 wizard.SetActive(false);
+                Action.image.sprite = magic;
                 thirdperson.controller = wizardcontroller;
                 thirdperson.player = wizardTransform;
                 JSthirdperson.controller = wizardcontroller;
@@ -111,7 +119,7 @@ public class SwitchCharacter : MonoBehaviour
                 archerFollow.m_Priority = 0;
                 knight.SetActive(false);
                 archer.SetActive(true);
-
+                Action.image.sprite = sword;
                 thirdperson.controller = knightcontroller;
                 thirdperson.player = knightTransform;
                 JSthirdperson.controller = knightcontroller;
@@ -130,6 +138,7 @@ public class SwitchCharacter : MonoBehaviour
                 archerFollow.m_Priority = 10;
                 archer.SetActive(false);
                 knight.SetActive(true);
+                Action.image.sprite = arrow;
                 thirdperson.controller = archercontroller;
                 thirdperson.player = archerTransform;
                 JSthirdperson.controller = archercontroller;
@@ -151,7 +160,7 @@ public class SwitchCharacter : MonoBehaviour
                 wizardFollow.m_Priority = 0;
                 knight.SetActive(false);
                 wizard.SetActive(true);
-
+                Action.image.sprite = sword;
                 thirdperson.controller = knightcontroller;
                 thirdperson.player = knightTransform;
                 JSthirdperson.controller = knightcontroller;
@@ -170,6 +179,7 @@ public class SwitchCharacter : MonoBehaviour
                 wizardFollow.m_Priority = 10;
                 knight.SetActive(true);
                 wizard.SetActive(false);
+                Action.image.sprite = magic;
                 thirdperson.controller = wizardcontroller;
                 thirdperson.player = wizardTransform;
                 JSthirdperson.controller = wizardcontroller;
@@ -190,6 +200,7 @@ public class SwitchCharacter : MonoBehaviour
                 wizardFollow.m_Priority = 0;
                 archer.SetActive(false);
                 wizard.SetActive(true);
+                Action.image.sprite = arrow;
                 thirdperson.controller = archercontroller;
                 thirdperson.player = archerTransform;
                 JSthirdperson.controller = archercontroller;
@@ -208,6 +219,7 @@ public class SwitchCharacter : MonoBehaviour
                 wizardFollow.m_Priority = 10;
                 archer.SetActive(true);
                 wizard.SetActive(false);
+                Action.image.sprite = magic;
                 thirdperson.controller = wizardcontroller;
                 thirdperson.player = wizardTransform;
                 JSthirdperson.controller = wizardcontroller;
@@ -227,7 +239,7 @@ public class SwitchCharacter : MonoBehaviour
             {
                 knightFollow.m_Priority = 10;
                 knight.SetActive(false);
-
+                Action.image.sprite = sword;
                 thirdperson.controller = knightcontroller;
                 thirdperson.player = knightTransform;
                 JSthirdperson.controller = knightcontroller;
@@ -245,6 +257,7 @@ public class SwitchCharacter : MonoBehaviour
             {
                 wizardFollow.m_Priority = 10;
                 wizard.SetActive(false);
+                Action.image.sprite = magic;
                 thirdperson.controller = wizardcontroller;
                 thirdperson.player = wizardTransform;
                 JSthirdperson.controller = wizardcontroller;
@@ -264,6 +277,7 @@ public class SwitchCharacter : MonoBehaviour
                 archerFollow.m_Priority = 10;
 
                 archer.SetActive(false);
+                Action.image.sprite = arrow;
                 thirdperson.controller = archercontroller;
                 thirdperson.player = archerTransform;
                 JSthirdperson.controller = archercontroller;
@@ -288,7 +302,7 @@ public class SwitchCharacter : MonoBehaviour
             knight.SetActive(true);
             archer.SetActive(false);
             wizard.SetActive(false);
-
+            Action.image.sprite = sword;
             thirdperson.controller = knightcontroller;
             thirdperson.player = knightTransform;
             JSthirdperson.controller = knightcontroller;
@@ -310,6 +324,7 @@ public class SwitchCharacter : MonoBehaviour
             knight.SetActive(false);
             archer.SetActive(true);
             wizard.SetActive(false);
+            Action.image.sprite = arrow;
             thirdperson.controller = archercontroller;
             thirdperson.player = archerTransform;
             JSthirdperson.controller = archercontroller;
@@ -331,6 +346,7 @@ public class SwitchCharacter : MonoBehaviour
             knight.SetActive(false);
             archer.SetActive(false);
             wizard.SetActive(true);
+            Action.image.sprite = magic;
             thirdperson.controller = wizardcontroller;
             thirdperson.player = wizardTransform;
             JSthirdperson.controller = wizardcontroller;
