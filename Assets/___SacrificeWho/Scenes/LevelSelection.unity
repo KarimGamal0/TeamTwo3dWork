@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028334, g: 0.2257134, b: 0.30692226, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -306,10 +306,55 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2603434634076504676, guid: 523387edce8ef8d41a4fccbd39cfa489,
+        type: 3}
+      propertyPath: PlayButtons
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2603434634076504676, guid: 523387edce8ef8d41a4fccbd39cfa489,
+        type: 3}
+      propertyPath: LevelS_UIcanvas
+      value: 
+      objectReference: {fileID: 1481541261}
     - target: {fileID: 2603434634076504679, guid: 523387edce8ef8d41a4fccbd39cfa489,
         type: 3}
       propertyPath: m_MatchWidthOrHeight
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2603434635680048127, guid: 523387edce8ef8d41a4fccbd39cfa489,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2603434635680048127, guid: 523387edce8ef8d41a4fccbd39cfa489,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2603434635680048127, guid: 523387edce8ef8d41a4fccbd39cfa489,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1481541260}
+    - target: {fileID: 2603434635680048127, guid: 523387edce8ef8d41a4fccbd39cfa489,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2603434635680048127, guid: 523387edce8ef8d41a4fccbd39cfa489,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: LoadMainMenu_UI
+      objectReference: {fileID: 0}
+    - target: {fileID: 2603434635680048127, guid: 523387edce8ef8d41a4fccbd39cfa489,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: LevelLoader, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 2603434635680048127, guid: 523387edce8ef8d41a4fccbd39cfa489,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 7127886943568045310, guid: 523387edce8ef8d41a4fccbd39cfa489,
         type: 3}
@@ -371,5 +416,28 @@ PrefabInstance:
       propertyPath: m_Name
       value: LevelSelection
       objectReference: {fileID: 0}
+    - target: {fileID: 8801092738066215052, guid: 523387edce8ef8d41a4fccbd39cfa489,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 523387edce8ef8d41a4fccbd39cfa489, type: 3}
+--- !u!114 &1481541260 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2603434634076504676, guid: 523387edce8ef8d41a4fccbd39cfa489,
+    type: 3}
+  m_PrefabInstance: {fileID: 1481541259}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d89e33757d2f19469cf1e5b60e54a1b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!223 &1481541261 stripped
+Canvas:
+  m_CorrespondingSourceObject: {fileID: 2603434634076504678, guid: 523387edce8ef8d41a4fccbd39cfa489,
+    type: 3}
+  m_PrefabInstance: {fileID: 1481541259}
+  m_PrefabAsset: {fileID: 0}
