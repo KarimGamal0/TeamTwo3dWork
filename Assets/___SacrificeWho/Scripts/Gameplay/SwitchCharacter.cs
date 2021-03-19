@@ -68,7 +68,6 @@ public class SwitchCharacter : MonoBehaviour
                 thirdperson.player = knightTransform;
                 JSthirdperson.controller = knightcontroller;
                 JSthirdperson.player = knightTransform;
-
                 jumper.controller = knightcontroller;
                 thirdperson.anim = knightavatar;
                 knightattacker.isActiveController = true;
@@ -90,7 +89,6 @@ public class SwitchCharacter : MonoBehaviour
                 thirdperson.player = archerTransform;
                 JSthirdperson.controller = archercontroller;
                 JSthirdperson.player = archerTransform;
-
                 jumper.controller = archercontroller;
                 thirdperson.anim = archeravatar;
                 knightattacker.isActiveController = false;
@@ -122,7 +120,6 @@ public class SwitchCharacter : MonoBehaviour
                 return;
             }
         }
-
         else if ((!knightdeath.state && !archerdeath.state && wizarddeath.state))
         {
             if (knight.activeInHierarchy)
@@ -136,7 +133,6 @@ public class SwitchCharacter : MonoBehaviour
                 thirdperson.player = knightTransform;
                 JSthirdperson.controller = knightcontroller;
                 JSthirdperson.player = knightTransform;
-
                 jumper.controller = knightcontroller;
                 thirdperson.anim = knightavatar;
                 knightattacker.isActiveController = true;
@@ -155,7 +151,6 @@ public class SwitchCharacter : MonoBehaviour
                 thirdperson.player = archerTransform;
                 JSthirdperson.controller = archercontroller;
                 JSthirdperson.player = archerTransform;
-
                 jumper.controller = archercontroller;
                 thirdperson.anim = archeravatar;
                 knightattacker.isActiveController = false;
@@ -177,7 +172,6 @@ public class SwitchCharacter : MonoBehaviour
                 thirdperson.player = knightTransform;
                 JSthirdperson.controller = knightcontroller;
                 JSthirdperson.player = knightTransform;
-
                 jumper.controller = knightcontroller;
                 thirdperson.anim = knightavatar;
                 knightattacker.isActiveController = true;
@@ -217,7 +211,6 @@ public class SwitchCharacter : MonoBehaviour
                 thirdperson.player = archerTransform;
                 JSthirdperson.controller = archercontroller;
                 JSthirdperson.player = archerTransform;
-
                 jumper.controller = archercontroller;
                 thirdperson.anim = archeravatar;
                 archerattacker.isActiveController = true;
@@ -244,7 +237,6 @@ public class SwitchCharacter : MonoBehaviour
                 return;
             }
         }
-
         else if ((!knightdeath.state && archerdeath.state && wizarddeath.state))
         {
             if (knight.activeInHierarchy)
@@ -256,7 +248,6 @@ public class SwitchCharacter : MonoBehaviour
                 thirdperson.player = knightTransform;
                 JSthirdperson.controller = knightcontroller;
                 JSthirdperson.player = knightTransform;
-
                 jumper.controller = knightcontroller;
                 thirdperson.anim = knightavatar;
                 knightattacker.isActiveController = true;
@@ -276,7 +267,6 @@ public class SwitchCharacter : MonoBehaviour
                 JSthirdperson.player = wizardTransform;
                 jumper.controller = wizardcontroller;
                 thirdperson.anim = wizardavatar;
-
                 wizardattacker.isActiveController = true;
                 return;
             }
@@ -285,9 +275,7 @@ public class SwitchCharacter : MonoBehaviour
         {
             if (archer.activeInHierarchy)
             {
-
                 archerFollow.m_Priority = 10;
-
                 archer.SetActive(false);
                 Action.image.sprite = arrow;
                 thirdperson.controller = archercontroller;
@@ -300,7 +288,6 @@ public class SwitchCharacter : MonoBehaviour
                 return;
             }
         }
-
     }
 
     public void AutoSwitch()

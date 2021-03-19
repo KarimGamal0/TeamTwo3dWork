@@ -29,7 +29,20 @@ public class LevelLoader : MonoBehaviour
     }
 
     // Update is called once per frame
+    private void Update()
+    {
+        if (Application.platform == RuntimePlatform.Android)
+        {
 
+            // Check if Back was pressed this frame
+            if (Input.GetKeyDown(KeyCode.Escape))
+            {
+
+                // Quit the application
+                SceneManager.LoadScene($"MainMenu");
+            }
+        }
+    }
 
     public void ShiftNext10Levels()
     {
