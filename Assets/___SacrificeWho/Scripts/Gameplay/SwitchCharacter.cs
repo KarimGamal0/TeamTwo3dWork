@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Cinemachine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class SwitchCharacter : MonoBehaviour
 {
@@ -39,6 +40,17 @@ public class SwitchCharacter : MonoBehaviour
     private void Update()
     {
         AutoSwitch();
+        if (Application.platform == RuntimePlatform.Android)
+        {
+
+            // Check if Back was pressed this frame
+            if (Input.GetKeyDown(KeyCode.Escape))
+            {
+
+                // Quit the application
+                SceneManager.LoadScene($"LevelSelection");
+            }
+        }
     }
     public void Switch()
     {
