@@ -10,8 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4661777912358030101}
   - component: {fileID: 4661777912358030098}
-  - component: {fileID: 4661777912358030099}
-  - component: {fileID: 4661777912358030096}
   - component: {fileID: 4661777912358030097}
   m_Layer: 0
   m_Name: KnightPlayer
@@ -55,44 +53,6 @@ CharacterController:
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 0.9, z: 0}
---- !u!114 &4661777912358030099
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4661777912358030110}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 42cf96c5148d1cd48a2fa0e04d8c3ecf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 4661777912358030101}
-  controller: {fileID: 4661777912358030098}
-  anim: {fileID: 0}
-  speed: 6
-  turnSmoothTime: 0.1
-  movement: {fileID: 0}
---- !u!114 &4661777912358030096
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4661777912358030110}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d8b3d866f8b44c644ae1fdf413b85baf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  controller: {fileID: 0}
-  isGrounded: 0
-  groundCheckDistance: 0.5
-  groundmask:
-    serializedVersion: 2
-    m_Bits: 64
-  gravity: -9.81
-  jumpHeight: 3
 --- !u!114 &4661777912358030097
 MonoBehaviour:
   m_ObjectHideFlags: 0

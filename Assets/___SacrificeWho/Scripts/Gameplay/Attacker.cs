@@ -30,10 +30,10 @@ public class Attacker : MonoBehaviour
         }
     }
 
-    private void Update()
-    {
-        Attack();
-    }
+    //private void Update()
+    //{
+    //    Attack();
+    //}
 
     IEnumerator StopMagic()
     {
@@ -43,18 +43,21 @@ public class Attacker : MonoBehaviour
 
     public void Attack()
     {
-        if (!isAttacking && Input.GetKeyDown(KeyCode.Mouse0) /*isActiveController*/)
+        if (!isAttacking && /*Input.GetKeyDown(KeyCode.Mouse0) */isActiveController)
         {
             StartAttacking();
             anim.SetTrigger("Attack");
-            MagicAttack();
+            if(attacktype==AttackType.wizard)
+            {
+                MagicAttack();
+            }
             FinishAttacking();
         }
     }
 
     public void MagicAttack()
     {
-        if (attacktype == AttackType.wizard)
+        if (attacktype == AttackType.wizard&& isActiveController)
         {
             Magic.Play();
             StartCoroutine(StopMagic());
