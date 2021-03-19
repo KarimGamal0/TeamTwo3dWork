@@ -1,3 +1,4 @@
+using Cinemachine;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -29,20 +30,16 @@ public class ThirdPersonController : MonoBehaviour
         float horizontal = Input.GetAxis("Horizontal");
         float vertical = Input.GetAxis("Vertical");
 
-    //    Vector3 direction = new Vector3(horizontal, 0.0f, vertical).normalized;
+        //    Vector3 direction = new Vector3(horizontal, 0.0f, vertical).normalized;
 
-    //    if (direction.magnitude >= 0.1f)
+        //    if (direction.magnitude >= 0.1f)
         {
             if (player != null)
             {
-
-
-
                 player.Rotate(0, horizontal * turnSmoothTime * Time.deltaTime, 0);
                 Vector3 forward = player.TransformDirection(Vector3.forward);
                 controller.Move(forward * Mathf.Max(vertical, 0) * speed * Time.deltaTime);
                 anim.SetBool("isRunning", controller.velocity != Vector3.zero);
-
             }
         }
     }
@@ -60,6 +57,7 @@ public class ThirdPersonController : MonoBehaviour
 
 //    [SerializeField] float speed = 6.0f;
 //    [SerializeField] float turnSmoothTime = 0.1f;
+//    [SerializeField] Camera cam;
 //    float turnSmoothVelcocity;
 
 
@@ -85,7 +83,7 @@ public class ThirdPersonController : MonoBehaviour
 //        {
 //            anim.SetBool("isRunning", true);
 //            //get the angle to rotate the character
-//            float targetAngle = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg;
+//            float targetAngle = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg+cam.transform.eulerAngles.y;
 
 //            //smooth rotation of the character
 //            float angle = Mathf.SmoothDampAngle(player.eulerAngles.y, targetAngle, ref turnSmoothVelcocity, turnSmoothTime);
