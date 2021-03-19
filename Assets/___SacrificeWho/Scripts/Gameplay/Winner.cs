@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Winner : MonoBehaviour
 {
@@ -25,11 +26,13 @@ public class Winner : MonoBehaviour
     {
         Debug.Log("Fail");
         Am.playAudio("Fail");
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
     public void Win()
     {
         Debug.Log("won");
         Am.playAudio("Win");
+        SceneManager.LoadScene("LevelSelection");
     }
     // Update is called once per frame
     void Update()

@@ -70,6 +70,7 @@ public class SwitchCharacter : MonoBehaviour
                 JSthirdperson.player = knightTransform;
                 jumper.controller = knightcontroller;
                 thirdperson.anim = knightavatar;
+                JSthirdperson.anim = knightavatar;
                 knightattacker.isActiveController = true;
                 archerattacker.isActiveController = false;
                 wizardattacker.isActiveController = false;
@@ -91,6 +92,7 @@ public class SwitchCharacter : MonoBehaviour
                 JSthirdperson.player = archerTransform;
                 jumper.controller = archercontroller;
                 thirdperson.anim = archeravatar;
+                JSthirdperson.anim = archeravatar;
                 knightattacker.isActiveController = false;
                 archerattacker.isActiveController = true;
                 wizardattacker.isActiveController = false;
@@ -112,6 +114,7 @@ public class SwitchCharacter : MonoBehaviour
                 JSthirdperson.player = wizardTransform;
                 jumper.controller = wizardcontroller;
                 thirdperson.anim = wizardavatar;
+                JSthirdperson.anim = wizardavatar;
                 knightattacker.isActiveController = false;
                 archerattacker.isActiveController = false;
                 wizardattacker.isActiveController = true;
@@ -135,6 +138,7 @@ public class SwitchCharacter : MonoBehaviour
                 JSthirdperson.player = knightTransform;
                 jumper.controller = knightcontroller;
                 thirdperson.anim = knightavatar;
+                JSthirdperson.anim = knightavatar;
                 knightattacker.isActiveController = true;
                 archerattacker.isActiveController = false;
                 archeravatar.SetBool("isRunning", false);
@@ -153,6 +157,7 @@ public class SwitchCharacter : MonoBehaviour
                 JSthirdperson.player = archerTransform;
                 jumper.controller = archercontroller;
                 thirdperson.anim = archeravatar;
+                JSthirdperson.anim = archeravatar;
                 knightattacker.isActiveController = false;
                 archerattacker.isActiveController = true;
                 knightavatar.SetBool("isRunning", false);
@@ -174,6 +179,7 @@ public class SwitchCharacter : MonoBehaviour
                 JSthirdperson.player = knightTransform;
                 jumper.controller = knightcontroller;
                 thirdperson.anim = knightavatar;
+                JSthirdperson.anim = knightavatar;
                 knightattacker.isActiveController = true;
                 wizardattacker.isActiveController = false;
                 wizardavatar.SetBool("isRunning", false);
@@ -192,6 +198,7 @@ public class SwitchCharacter : MonoBehaviour
                 JSthirdperson.player = wizardTransform;
                 jumper.controller = wizardcontroller;
                 thirdperson.anim = wizardavatar;
+                JSthirdperson.anim = wizardavatar;
                 knightattacker.isActiveController = false;
                 wizardattacker.isActiveController = true;
                 knightavatar.SetBool("isRunning", false);
@@ -213,6 +220,7 @@ public class SwitchCharacter : MonoBehaviour
                 JSthirdperson.player = archerTransform;
                 jumper.controller = archercontroller;
                 thirdperson.anim = archeravatar;
+                JSthirdperson.anim = archeravatar;
                 archerattacker.isActiveController = true;
                 wizardattacker.isActiveController = false;
                 wizardavatar.SetBool("isRunning", false);
@@ -231,6 +239,7 @@ public class SwitchCharacter : MonoBehaviour
                 JSthirdperson.player = wizardTransform;
                 jumper.controller = wizardcontroller;
                 thirdperson.anim = wizardavatar;
+                JSthirdperson.anim = wizardavatar;
                 archerattacker.isActiveController = false;
                 wizardattacker.isActiveController = true;
                 archeravatar.SetBool("isRunning", false);
@@ -250,6 +259,7 @@ public class SwitchCharacter : MonoBehaviour
                 JSthirdperson.player = knightTransform;
                 jumper.controller = knightcontroller;
                 thirdperson.anim = knightavatar;
+                JSthirdperson.anim = knightavatar;
                 knightattacker.isActiveController = true;
                 return;
             }
@@ -267,6 +277,7 @@ public class SwitchCharacter : MonoBehaviour
                 JSthirdperson.player = wizardTransform;
                 jumper.controller = wizardcontroller;
                 thirdperson.anim = wizardavatar;
+                JSthirdperson.anim = wizardavatar;
                 wizardattacker.isActiveController = true;
                 return;
             }
@@ -284,6 +295,7 @@ public class SwitchCharacter : MonoBehaviour
                 JSthirdperson.player = archerTransform;
                 jumper.controller = archercontroller;
                 thirdperson.anim = archeravatar;
+                JSthirdperson.anim = archeravatar;
                 archerattacker.isActiveController = true;
                 return;
             }
@@ -309,6 +321,7 @@ public class SwitchCharacter : MonoBehaviour
 
             jumper.controller = knightcontroller;
             thirdperson.anim = knightavatar;
+            JSthirdperson.anim = knightavatar;
             knightattacker.isActiveController = true;
             archerattacker.isActiveController = false;
             wizardattacker.isActiveController = false;
@@ -331,6 +344,7 @@ public class SwitchCharacter : MonoBehaviour
 
             jumper.controller = archercontroller;
             thirdperson.anim = archeravatar;
+            JSthirdperson.anim = archeravatar;
             knightattacker.isActiveController = false;
             archerattacker.isActiveController = true;
             wizardattacker.isActiveController = false;
@@ -352,6 +366,7 @@ public class SwitchCharacter : MonoBehaviour
             JSthirdperson.player = wizardTransform;
             jumper.controller = wizardcontroller;
             thirdperson.anim = wizardavatar;
+            JSthirdperson.anim = wizardavatar;
             knightattacker.isActiveController = false;
             archerattacker.isActiveController = false;
             wizardattacker.isActiveController = true;
