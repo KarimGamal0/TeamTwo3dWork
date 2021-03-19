@@ -26,19 +26,16 @@ public class ArrowsHandler : MonoBehaviour
 
     private void OnTriggerEnter(Collider collision)
     {
-        if (obstacleState)
+        if (collision.CompareTag("Player"))
         {
-            obstacleState = false; //activate one time 
-
-            var Charcter = collision.gameObject.GetComponent<CharacterController>();
-            if (Charcter != null)
+            if (obstacleState)
             {
+                obstacleState = false;
                 Debug.Log("killed by arrow");
 
-                FindObjectOfType<AudioManager>().playAudio("ArrowHit");
+               // FindObjectOfType<AudioManager>().playAudio("ArrowHit");
                 arrowsAnimator.SetBool(IsOpen, true);
-                //todo arrows sound
-                killCharcterSO.Raise();//place listner on your charcter and trigger death function...
+                killCharcterSO?.Raise();//place listner on your charcter and trigger death function...
             }
         }
     }

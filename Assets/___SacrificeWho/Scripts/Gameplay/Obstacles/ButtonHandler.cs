@@ -4,76 +4,53 @@ using UnityEngine;
 
 public class ButtonHandler : MonoBehaviour
 {
-    [SerializeField] DoorHandler[] DoorsToOpen;
-    [SerializeField] DoorHandler[] DoorsToClose;
+    //[SerializeField] DoorHandler[] DoorsToOpen;   zombie code
+    //[SerializeField] DoorHandler[] DoorsToClose;  zombie code
 
     private static readonly int IsOpen = Animator.StringToHash("IsOpen");
     private Animator _ButtonAnimator;
-    private BoxCollider CharcterDetector;
-
-    public bool triggredNearCharcter = false;
-
-
+    BoxCollider boxtrigger;
+    public bool CollideOneTimeOnly = true;
+    public MyEventSO open_Portal_SO;   
 
 
-    /*
-     -Drop event listner on Button model  because khatab will call open from android button ... 
-      Button model Must have 
-      1- animator Componenet //with animation set to it  and bool  IsOpen 
-
-    2-Box collider :
-    dont forget to adjust the area of collider.. 
-   Collider type is trigger to prevent colliosn with other objects ... 
-    --------------------------------------------------------
-    The collided or triggred object could have charcter controller to be able to activate the button 
-    */
 
     private void Awake()
     {
         _ButtonAnimator = GetComponent<Animator>();
-        CharcterDetector = GetComponent<BoxCollider>();
-        CharcterDetector.isTrigger = true;
+        boxtrigger = GetComponent<BoxCollider>();
+        boxtrigger.isTrigger = true; 
+
     }
 
-    public void Open()
+
+
+
+
+    
+  
+    private void OnTriggerEnter(Collider collision)
     {
-        if (triggredNearCharcter==true)
+       
+        if (collision.CompareTag("Player"))
         {
-            _ButtonAnimator.SetBool(IsOpen, true);
-           
-            for (int i = 0; i < DoorsToOpen?.Length; i++)
+            if (CollideOneTimeOnly)
             {
-                DoorsToOpen[i]?.Open();
+                CollideOneTimeOnly = false;
+
+                Debug.Log("collided with key portal");
+                _ButtonAnimator.SetBool(IsOpen, true);
+                open_Portal_SO?.Raise();
+
             }
-            for (int i = 0; i < DoorsToClose?.Length; i++)
-            {
-                DoorsToClose[i]?.Close();
-            }
+
+   
         }
+  
     }
 
 
 
-
-    private void OnTriggerStay(Collider collision)
-    {
-        var  Charcter= collision.gameObject.GetComponent<CharacterController>();
-        if (Charcter != null)
-        {
-            triggredNearCharcter = true;
-        }
-    }
-
-
-    private void OnTriggerExit(Collider collision)
-    {
-        var Charcter = collision.gameObject.GetComponent<CharacterController>();
-        if (Charcter!=null)
-        {
-            triggredNearCharcter = false;
-        }
-    }
- 
 }
 
 
@@ -81,3 +58,13 @@ public class ButtonHandler : MonoBehaviour
 drop my event listner on the Button 
 bind open function with the event from unity Inspector .
  */
+
+//zomie code... 
+//for (int i = 0; i < DoorsToOpen?.Length; i++)
+//{
+//    DoorsToOpen[i]?.Open();
+//}
+//for (int i = 0; i < DoorsToClose?.Length; i++)
+//{
+//    DoorsToClose[i]?.Close();
+//}

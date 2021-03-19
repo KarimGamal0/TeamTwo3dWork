@@ -6,19 +6,31 @@ public class SpikeHandler : MonoBehaviour
 {
 
     private static readonly int IsOpen = Animator.StringToHash("IsOpen");
-    private Animator[] _Spikeanimator;
+    [SerializeField] Animator _Spikeanimator;
 
 
     [SerializeField] MyEventSO killCharcterSO;
     bool obstacleState = true;
     BoxCollider spikeGroupCollider;
     AudioManager soundManager;
-    
+
 
 
     private void Awake()
     {
-        _Spikeanimator = GetComponentsInChildren<Animator>();
+        _Spikeanimator = GetComponentInChildren<Animator>();
+        if (_Spikeanimator)
+        {
+            Debug.Log("foundAnimtaor");
+
+        }
+
+        else
+        {
+            Debug.Log("didnot foundAnimtaor");
+
+        }
+
         spikeGroupCollider = GetComponent<BoxCollider>();
 
         spikeGroupCollider.isTrigger = true;
@@ -29,31 +41,30 @@ public class SpikeHandler : MonoBehaviour
     private void OnTriggerEnter(Collider collision)
 
     {
- 
+  
+
         if (obstacleState)
         {
-            obstacleState = false; //activate one time 
 
-            var Charcter = collision.gameObject.GetComponent<CharacterController>();
-            if (Charcter != null)
+            if (collision.CompareTag("Player"))
             {
-                Debug.Log("killed by spike");
-
-                FindObjectOfType<AudioManager>().playAudio("FallOnSpikes");
 
 
+                obstacleState = false;
+                 Debug.Log("killed by spike");
 
-                foreach (var spike in _Spikeanimator)
-                {
-                    spike.SetBool(IsOpen, true);
-                }
-                killCharcterSO.Raise();
+                    // FindObjectOfType<AudioManager>().playAudio("FallOnSpikes");
 
+                    _Spikeanimator.SetBool(IsOpen, true);
+                    
+                    killCharcterSO?.Raise();
+
+                
             }
         }
+
+
     }
-
-
 }
 
  
