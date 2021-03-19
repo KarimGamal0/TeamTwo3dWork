@@ -19,12 +19,8 @@ public class Death : MonoBehaviour
     {
         isDead.state = true;
         anim.SetTrigger("Death");
-        Destroy(target.gameObject);
-        Destroy(cvcam.gameObject);
-
-        //target.SetActive(false);
-        //cvcam.enabled = false;
-
+        target.SetActive(false);
+        cvcam.enabled = false;
     }
 
 }
