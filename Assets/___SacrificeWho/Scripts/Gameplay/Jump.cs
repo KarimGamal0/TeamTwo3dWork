@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Jump : MonoBehaviour
 {
-    [SerializeField]public CharacterController controller;
+    [SerializeField] public CharacterController controller;
 
     [SerializeField] bool isGrounded;
     [SerializeField] float groundCheckDistance;
@@ -33,14 +33,13 @@ public class Jump : MonoBehaviour
             velocity.y = -2f;
         }
 
-        //if (isGrounded)
-        //{
-        //    if (Input.GetKeyDown(KeyCode.Space))
-        //    {
-                
-        //        JumpAction();
-        //    }
-        //}
+        if (isGrounded)
+        {
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                JumpAction();
+            }
+        }
 
         velocity.y += gravity * Time.deltaTime;
         controller.Move(velocity * Time.deltaTime);
@@ -50,5 +49,10 @@ public class Jump : MonoBehaviour
     {
         anim.SetBool("isRunning", false);
         velocity.y = Mathf.Sqrt(jumpHeight * -2 * gravity);
+    }
+
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.DrawSphere(transform.position, groundCheckDistance);
     }
 }
