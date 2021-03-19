@@ -194,8 +194,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5abac989c40b5147b63b6637f37830a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _Spikeanimator: {fileID: 0}
-  killCharcterSO: {fileID: 0}
+  _Spikeanimator:
+  - {fileID: 5671788462929467064}
+  killKnightSO: {fileID: 0}
+  killArcherSO: {fileID: 0}
+  killWizardSO: {fileID: 0}
 --- !u!65 &5671788462929467014
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -240,8 +243,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5abac989c40b5147b63b6637f37830a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _Spikeanimator: {fileID: 5671788462929467064}
-  killCharcterSO: {fileID: 0}
+  _Spikeanimator:
+  - {fileID: 0}
+  killKnightSO: {fileID: 0}
+  killArcherSO: {fileID: 0}
+  killWizardSO: {fileID: 0}
 --- !u!1 &7474222804346260306
 GameObject:
   m_ObjectHideFlags: 0

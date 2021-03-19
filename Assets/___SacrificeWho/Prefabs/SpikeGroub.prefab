@@ -61,7 +61,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5abac989c40b5147b63b6637f37830a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  killCharcterSO: {fileID: 11400000, guid: 2fbe59fa9ccda5b49a8e841463e769ef, type: 2}
+  _Spikeanimator:
+  - {fileID: 3844511603805135827}
+  killKnightSO: {fileID: 11400000, guid: 66996f6745a32804490219abfa3222ef, type: 2}
+  killArcherSO: {fileID: 11400000, guid: 244ba8c4dba056548aa41244dec31adb, type: 2}
+  killWizardSO: {fileID: 11400000, guid: bd56de8484017ec40b6b9e6c6cf695d2, type: 2}
 --- !u!65 &1784138810552379313
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -602,6 +606,12 @@ PrefabInstance:
 --- !u!4 &3974707859616957309 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3452703417167445141, guid: d305604b553d6cc45baba3a5ddd0b3b0,
+    type: 3}
+  m_PrefabInstance: {fileID: 1784138811029520360}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &3844511603805135827 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 3285650962886876219, guid: d305604b553d6cc45baba3a5ddd0b3b0,
     type: 3}
   m_PrefabInstance: {fileID: 1784138811029520360}
   m_PrefabAsset: {fileID: 0}

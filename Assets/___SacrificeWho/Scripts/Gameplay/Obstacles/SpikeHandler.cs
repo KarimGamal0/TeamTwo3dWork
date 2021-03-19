@@ -6,10 +6,14 @@ public class SpikeHandler : MonoBehaviour
 {
 
     private static readonly int IsOpen = Animator.StringToHash("IsOpen");
-    [SerializeField] Animator _Spikeanimator;
+    [SerializeField] Animator[] _Spikeanimator;
 
 
-    [SerializeField] MyEventSO killCharcterSO;
+    [SerializeField] MyEventSO killKnightSO;
+    [SerializeField] MyEventSO killArcherSO;
+    [SerializeField] MyEventSO killWizardSO;
+
+
     bool obstacleState = true;
     BoxCollider spikeGroupCollider;
     AudioManager soundManager;
@@ -18,18 +22,8 @@ public class SpikeHandler : MonoBehaviour
 
     private void Awake()
     {
-        _Spikeanimator = GetComponentInChildren<Animator>();
-        if (_Spikeanimator)
-        {
-            Debug.Log("foundAnimtaor");
+        _Spikeanimator = GetComponentsInChildren<Animator>();
 
-        }
-
-        else
-        {
-            Debug.Log("didnot foundAnimtaor");
-
-        }
 
         spikeGroupCollider = GetComponent<BoxCollider>();
 
@@ -46,20 +40,39 @@ public class SpikeHandler : MonoBehaviour
         if (obstacleState)
         {
 
-            if (collision.CompareTag("Player"))
-            {
+            var Charcter = collision.gameObject.GetComponent<CharacterController>();
+            if (Charcter != null)
+            
+                {
 
 
                 obstacleState = false;
                  Debug.Log("killed by spike");
 
-                    // FindObjectOfType<AudioManager>().playAudio("FallOnSpikes");
+                // FindObjectOfType<AudioManager>().playAudio("FallOnSpikes");
 
-                    _Spikeanimator.SetBool(IsOpen, true);
-                    
-                    killCharcterSO?.Raise();
 
-                
+                foreach (var spike in _Spikeanimator)
+                {
+                    spike?.SetBool(IsOpen, true);
+
+                }
+                if (collision.CompareTag("Wizard"))
+                {
+                    killWizardSO?.Raise();
+                }
+                if (collision.CompareTag("Knight"))
+                {
+                    killKnightSO?.Raise();
+                }
+                if (collision.CompareTag("Archer"))
+                {
+                    killArcherSO?.Raise();
+                }
+
+                collision.GetComponent<MyEventListner>()?.OnEventRaise();
+
+
             }
         }
 

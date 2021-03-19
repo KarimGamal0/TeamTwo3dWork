@@ -9,7 +9,10 @@ public class ArrowsHandler : MonoBehaviour
     private BoxCollider CollideCHecker;
 
 
-    [SerializeField] MyEventSO killCharcterSO;
+    [SerializeField] MyEventSO killKnightSO;
+    [SerializeField] MyEventSO killArcherSO;
+    [SerializeField] MyEventSO killWizardSO;
+
     bool obstacleState = true;
 
 
@@ -26,7 +29,8 @@ public class ArrowsHandler : MonoBehaviour
 
     private void OnTriggerEnter(Collider collision)
     {
-        if (collision.CompareTag("Player"))
+        var Charcter = collision.gameObject.GetComponent<CharacterController>();
+        if (Charcter != null)
         {
             if (obstacleState)
             {
@@ -35,7 +39,25 @@ public class ArrowsHandler : MonoBehaviour
 
                // FindObjectOfType<AudioManager>().playAudio("ArrowHit");
                 arrowsAnimator.SetBool(IsOpen, true);
-                killCharcterSO?.Raise();//place listner on your charcter and trigger death function...
+
+                // collision.GetComponent<MyEventListner>()?.OnEventRaise();
+                if (collision.CompareTag("Wizard"))
+                {
+                    killWizardSO.Raise();
+                }
+                if (collision.CompareTag("Knight"))
+                {
+                    killKnightSO.Raise();
+                }
+                if (collision.CompareTag("Archer"))
+                {
+                    killArcherSO.Raise();
+                }
+
+
+
+                //  killKnightSO?.Raise();//place listner on your charcter and trigger death function...
+
             }
         }
     }

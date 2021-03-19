@@ -31,8 +31,9 @@ public class ButtonHandler : MonoBehaviour
   
     private void OnTriggerEnter(Collider collision)
     {
-       
-        if (collision.CompareTag("Player"))
+
+        var Charcter = collision.gameObject.GetComponent<CharacterController>();
+        if (Charcter != null)
         {
             if (CollideOneTimeOnly)
             {
