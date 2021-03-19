@@ -12,6 +12,10 @@ GameObject:
   - component: {fileID: 5481054300005279692}
   - component: {fileID: 5481054300005278771}
   - component: {fileID: 5481054300005278770}
+  - component: {fileID: 448929778579904697}
+  - component: {fileID: 2374326079809015580}
+  - component: {fileID: 3911306183433656929}
+  - component: {fileID: 5957184617238223423}
   m_Layer: 0
   m_Name: GoodPortal
   m_TagString: Untagged
@@ -96,3 +100,69 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &448929778579904697
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5481054300005278768}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f413a15f466e2ae48974249825e4e9a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &2374326079809015580
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5481054300005278768}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 85abddf44f3edec4d82a241d81580ed7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  myevent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 448929778579904697}
+        m_TargetAssemblyTypeName: testShaderAlpha, Assembly-CSharp
+        m_MethodName: Open
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  emptyPaper: {fileID: 0}
+--- !u!114 &3911306183433656929
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5481054300005278768}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1babdae26f239854faa4cb210b85c1db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  teleportArea: {fileID: 0}
+--- !u!65 &5957184617238223423
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5481054300005278768}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 7.199083, y: 1.3220828, z: 9.684493}
+  m_Center: {x: -0.046243664, y: -0.07051117, z: -0.15776604}
