@@ -49,7 +49,7 @@ public class SpikeHandler : MonoBehaviour
                 obstacleState = false;
                  Debug.Log("killed by spike");
 
-                // FindObjectOfType<AudioManager>().playAudio("FallOnSpikes");
+                FindObjectOfType<AudioManager>().playAudio("FallOnSpikes");
 
 
                 foreach (var spike in _Spikeanimator)
