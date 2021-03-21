@@ -11,7 +11,8 @@ public class ThirdPersonController : MonoBehaviour
     [SerializeField] float speed = 6.0f;
     [SerializeField] float turnSmoothTime = 0.1f;
     [SerializeField] Vector3SO movement;
-    [SerializeField]internal bool isActive = false;
+    [SerializeField] internal bool isActive = false;
+
     float turnSmoothVelcocity;
     float horizontal;
     float vertical;
@@ -20,11 +21,12 @@ public class ThirdPersonController : MonoBehaviour
     {
         anim = GetComponentInChildren<Animator>();
     }
+
     void Update()
     {
-        if(isActive)
+        if (isActive)
         {
-        Move();
+            Move();
         }
     }
 
@@ -35,10 +37,11 @@ public class ThirdPersonController : MonoBehaviour
         bool hasHorizontalInput = !Mathf.Approximately(horizontal, 0f);
         bool hasVerticalInput = !Mathf.Approximately(vertical, 0f);
         bool isWalking = hasHorizontalInput || hasVerticalInput;
+
         if (player != null)
         {
             forward = player.TransformDirection(Vector3.forward);
-            Debug.Log(isWalking);    
+            Debug.Log(isWalking);
             anim.SetBool("isRunning", isWalking);
         }
     }
