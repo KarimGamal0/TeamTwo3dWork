@@ -104,6 +104,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6761304522463307455}
   - component: {fileID: 1237521976823816139}
+  - component: {fileID: 7235531791659729176}
   m_Layer: 0
   m_Name: Portal key animated
   m_TagString: Untagged
@@ -146,6 +147,19 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!65 &7235531791659729176
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6241753854570576901}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 3.2368119, z: 0.17497188}
+  m_Center: {x: 2.5356465e-15, y: 1.1184064, z: 0.096004024}
 --- !u!1 &6652518982268563469
 GameObject:
   m_ObjectHideFlags: 0

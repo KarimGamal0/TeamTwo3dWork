@@ -38,6 +38,7 @@ public class ButtonHandler : MonoBehaviour
             if (CollideOneTimeOnly)
             {
                 CollideOneTimeOnly = false;
+                boxtrigger.isTrigger = false;
 
                 Debug.Log("collided with key portal");
                 _ButtonAnimator.SetBool(IsOpen, true);

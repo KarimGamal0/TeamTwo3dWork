@@ -37,7 +37,9 @@ public class ArrowsHandler : MonoBehaviour
                 obstacleState = false;
                 Debug.Log("killed by arrow");
 
-               // FindObjectOfType<AudioManager>().playAudio("ArrowHit");
+                CollideCHecker.isTrigger = false;
+
+                // FindObjectOfType<AudioManager>().playAudio("ArrowHit");
                 arrowsAnimator.SetBool(IsOpen, true);
 
                 // collision.GetComponent<MyEventListner>()?.OnEventRaise();
@@ -47,6 +49,8 @@ public class ArrowsHandler : MonoBehaviour
                 }
                 if (collision.CompareTag("Knight"))
                 {
+                    Debug.Log("kingt");
+
                     killKnightSO.Raise();
                 }
                 if (collision.CompareTag("Archer"))
