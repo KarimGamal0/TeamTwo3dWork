@@ -101,7 +101,7 @@ MonoBehaviour:
   player: {fileID: 3885891436276012629}
   controller: {fileID: 3885891436276012628}
   cam: {fileID: 0}
-  speed: 6
+  speed: 1
   turnSmoothTime: 0.2
   movement: {fileID: 11400000, guid: 72f6b822a0403dc4da6b236fe8d055db, type: 2}
 --- !u!114 &889855389737540622
@@ -205,7 +205,7 @@ MonoBehaviour:
   player: {fileID: 4494159581123538924}
   controller: {fileID: 4494159581123538923}
   cam: {fileID: 0}
-  speed: 6
+  speed: 1
   turnSmoothTime: 0.2
   movement: {fileID: 11400000, guid: 72f6b822a0403dc4da6b236fe8d055db, type: 2}
 --- !u!1 &6845319715933473854
@@ -323,7 +323,7 @@ MonoBehaviour:
   player: {fileID: 8088765012755907171}
   controller: {fileID: 8088765012755907168}
   cam: {fileID: 0}
-  speed: 6
+  speed: 1
   turnSmoothTime: 0.2
   movement: {fileID: 11400000, guid: 72f6b822a0403dc4da6b236fe8d055db, type: 2}
 --- !u!114 &2025243487
@@ -371,7 +371,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8976992797548700918}
-  m_LocalRotation: {x: 0.15278573, y: 0.000000008502187, z: -0.0000000013144454, w: 0.9882594}
+  m_LocalRotation: {x: 0.15278575, y: -0.00000000850218, z: 0.0000000013144443, w: 0.9882594}
   m_LocalPosition: {x: 0.117004395, y: 1.207, z: -2.4799805}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -744,17 +744,17 @@ PrefabInstance:
     - target: {fileID: 7297905758196821030, guid: 61484c6818f9ca74fb99e9e34efd952d,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.15278575
+      value: 0.15278573
       objectReference: {fileID: 0}
     - target: {fileID: 7297905758196821030, guid: 61484c6818f9ca74fb99e9e34efd952d,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.00000000850218
+      value: 0.000000008502187
       objectReference: {fileID: 0}
     - target: {fileID: 7297905758196821030, guid: 61484c6818f9ca74fb99e9e34efd952d,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.0000000013144443
+      value: -0.0000000013144454
       objectReference: {fileID: 0}
     - target: {fileID: 7876714567441298446, guid: 61484c6818f9ca74fb99e9e34efd952d,
         type: 3}
@@ -978,17 +978,17 @@ PrefabInstance:
     - target: {fileID: 4913855351079442827, guid: 211ddb68ea8f3a546bd9a458a4b953f0,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.15278573
+      value: 0.15278575
       objectReference: {fileID: 0}
     - target: {fileID: 4913855351079442827, guid: 211ddb68ea8f3a546bd9a458a4b953f0,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.000000008502187
+      value: -0.00000000850218
       objectReference: {fileID: 0}
     - target: {fileID: 4913855351079442827, guid: 211ddb68ea8f3a546bd9a458a4b953f0,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.0000000013144454
+      value: 0.0000000013144443
       objectReference: {fileID: 0}
     - target: {fileID: 4913855351214949573, guid: 211ddb68ea8f3a546bd9a458a4b953f0,
         type: 3}
