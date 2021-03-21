@@ -47,6 +47,15 @@ public class Attacker : MonoBehaviour
         {
             StartAttacking();
             anim.SetTrigger("Attack");
+            Ray ray=new Ray(transform.position,transform.forward);
+            RaycastHit hit;
+            if(Physics.Raycast(ray,out hit,5.0f))
+            {
+                if(hit.transform.tag=="Archer"||hit.transform.tag=="wizard")
+                {
+                    hit.transform.position += transform.forward * 5.0f;
+                }
+            }
             if(attacktype==AttackType.wizard)
             {
                 MagicAttack();
@@ -59,6 +68,7 @@ public class Attacker : MonoBehaviour
     {
         if (attacktype == AttackType.wizard&& isActiveController)
         {
+            anim.SetTrigger("Attack");
             Magic.Play();
             StartCoroutine(StopMagic());
         }

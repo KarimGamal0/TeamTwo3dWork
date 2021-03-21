@@ -37,12 +37,12 @@ public class JoystickController : MonoBehaviour
                 if (is_dragged == true && Touchdisplacment.magnitude < range)
                 {
                     joystick.rectTransform.position = touchPosition;
-                    movement.value = new Vector3(-Mathf.Clamp((Touchdisplacment).x, -5, 5), 0, -Mathf.Clamp((Touchdisplacment).y, -5, 5));
+                    movement.value = new Vector3(-Mathf.Clamp((Touchdisplacment).x, -1, 1), 0, -Mathf.Clamp((Touchdisplacment).y, -1, 1));
                 }
                 else if (is_dragged == true && Touchdisplacment.magnitude >= range)
                 {
                     joystick.rectTransform.position = Vector3.ClampMagnitude(Vector3.LerpUnclamped(origninalPosition, touchPosition, range), range) + origninalPosition;
-                    movement.value = new Vector3(-Mathf.Clamp((Touchdisplacment).x, -5, 5), 0, -Mathf.Clamp((Touchdisplacment).y, -5, 5));
+                    movement.value = new Vector3(-Mathf.Clamp((Touchdisplacment).x, -1, 1), 0, -Mathf.Clamp((Touchdisplacment).y, -1, 1));
                 }
             }
             if (_touch.phase == TouchPhase.Ended)
