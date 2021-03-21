@@ -698,6 +698,51 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8088765013174987846, guid: a645b89a581d79b4790ef5a7674bb824,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.15278447
+      objectReference: {fileID: 0}
+    - target: {fileID: 8088765013174987846, guid: a645b89a581d79b4790ef5a7674bb824,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.000000029452428
+      objectReference: {fileID: 0}
+    - target: {fileID: 8088765013174987846, guid: a645b89a581d79b4790ef5a7674bb824,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.0000000045533315
+      objectReference: {fileID: 0}
+    - target: {fileID: 8976992797548700811, guid: a645b89a581d79b4790ef5a7674bb824,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -1.632
+      objectReference: {fileID: 0}
+    - target: {fileID: 8976992797548700811, guid: a645b89a581d79b4790ef5a7674bb824,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.342
+      objectReference: {fileID: 0}
+    - target: {fileID: 8976992797548700811, guid: a645b89a581d79b4790ef5a7674bb824,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -2.690001
+      objectReference: {fileID: 0}
+    - target: {fileID: 8976992797548700811, guid: a645b89a581d79b4790ef5a7674bb824,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.15278447
+      objectReference: {fileID: 0}
+    - target: {fileID: 8976992797548700811, guid: a645b89a581d79b4790ef5a7674bb824,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.000000029452428
+      objectReference: {fileID: 0}
+    - target: {fileID: 8976992797548700811, guid: a645b89a581d79b4790ef5a7674bb824,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.0000000045533315
+      objectReference: {fileID: 0}
     - target: {fileID: 8976992797668887216, guid: a645b89a581d79b4790ef5a7674bb824,
         type: 3}
       propertyPath: Action

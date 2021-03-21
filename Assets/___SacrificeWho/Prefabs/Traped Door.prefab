@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8023773475268598895}
   - component: {fileID: 7193785328593843102}
+  - component: {fileID: 1230852936767587667}
   m_Layer: 0
   m_Name: polySurface106
   m_TagString: Untagged
@@ -25,7 +26,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 911435316995297820}
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 8.79, y: 0, z: -0}
+  m_LocalPosition: {x: 8.79, y: 1.11, z: -0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4847149158576010532}
@@ -85,6 +86,19 @@ SkinnedMeshRenderer:
     m_Center: {x: -0.20293093, y: -2.2690043, z: -0.18607998}
     m_Extent: {x: 0.54706913, y: 2.4150634, z: 2.716506}
   m_DirtyAABB: 0
+--- !u!65 &1230852936767587667
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 911435316995297820}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 5.433014, y: 1.094139, z: 3.3698938}
+  m_Center: {x: -20.691177, y: -0.90706843, z: -0.60511494}
 --- !u!1 &2154354052182414885
 GameObject:
   m_ObjectHideFlags: 0
@@ -245,9 +259,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _Spikeanimator:
   - {fileID: 0}
-  killKnightSO: {fileID: 0}
-  killArcherSO: {fileID: 0}
-  killWizardSO: {fileID: 0}
+  killKnightSO: {fileID: 11400000, guid: 66996f6745a32804490219abfa3222ef, type: 2}
+  killArcherSO: {fileID: 11400000, guid: 244ba8c4dba056548aa41244dec31adb, type: 2}
+  killWizardSO: {fileID: 11400000, guid: bd56de8484017ec40b6b9e6c6cf695d2, type: 2}
 --- !u!1 &7474222804346260306
 GameObject:
   m_ObjectHideFlags: 0
