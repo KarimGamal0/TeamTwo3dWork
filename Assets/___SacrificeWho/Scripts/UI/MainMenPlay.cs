@@ -8,20 +8,28 @@ using UnityEngine.UI;
 
 public class MainMenPlay : MonoBehaviour
 {
-    private void Update()
-    {
-        if (Application.platform == RuntimePlatform.Android)
-        {
-            if (Input.GetKeyDown(KeyCode.Escape))
-            {
-                Application.Quit();
-            }
-        }
-    }
 
+    //   [SerializeField] Button back10Levels;
+   
     public void LoadLevels_UI()
     {
          SceneManager.LoadScene($"LevelSelection");
     }
+    
+   private void Update()
+    {
+        if (Application.platform == RuntimePlatform.Android)
+        {
+
+            // Check if Back was pressed this frame
+            if (Input.GetKeyDown(KeyCode.Escape))
+            {
+
+                // Quit the application
+                Application.Quit();
+            }
+        }
+    }
+       
 
 }

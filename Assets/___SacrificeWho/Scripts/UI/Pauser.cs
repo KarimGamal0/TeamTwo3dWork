@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class Pauser : MonoBehaviour
@@ -8,19 +9,21 @@ public class Pauser : MonoBehaviour
     [SerializeField] GameObject pauseMenu;
     [SerializeField] GameObject Gameui;
     [SerializeField] BoolSO paused;
-    [SerializeField] Resumer resumer;
     private void Start()
     {
         paused.state = false;
-        resumer = FindObjectOfType<Resumer>();
     }
-    private void Update()
+    void Update()
     {
         if (Application.platform == RuntimePlatform.Android)
         {
+
+            // Check if Back was pressed this frame
             if (Input.GetKeyDown(KeyCode.Escape))
             {
-                resumer.Resume();
+
+                // Quit the application
+                SceneManager.LoadScene($"LevelSelection");
             }
         }
     }

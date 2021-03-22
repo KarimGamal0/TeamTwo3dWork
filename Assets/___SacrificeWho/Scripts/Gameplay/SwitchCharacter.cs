@@ -58,6 +58,7 @@ public class SwitchCharacter : MonoBehaviour
     }
     public void Switch()
     {
+        FindObjectOfType<AudioManager>().playAudio("Switch");
         if (!knightdeath.state && !archerdeath.state && !wizarddeath.state)
         {
             if (knight.activeInHierarchy)
@@ -284,6 +285,7 @@ public class SwitchCharacter : MonoBehaviour
 
     public void AutoSwitch()
     {
+        FindObjectOfType<AudioManager>().playAudio("Switch");
         if ((!knightdeath.state && knight.activeInHierarchy) || (archerdeath.state && !archer.activeInHierarchy && wizarddeath.state && !wizard.activeInHierarchy))
         {
             knightFollow.m_Priority = 10;

@@ -37,9 +37,9 @@ public class ArrowsHandler : MonoBehaviour
                 obstacleState = false;
                 Debug.Log("killed by arrow");
 
-                CollideCHecker.isTrigger = false;
+                ////CollideCHecker.isTrigger = false;
 
-                // FindObjectOfType<AudioManager>().playAudio("ArrowHit");
+                FindObjectOfType<AudioManager>().playAudio("ArrowHit");
                 arrowsAnimator.SetBool(IsOpen, true);
 
                 // collision.GetComponent<MyEventListner>()?.OnEventRaise();

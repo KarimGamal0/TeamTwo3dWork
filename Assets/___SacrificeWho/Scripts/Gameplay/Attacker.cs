@@ -38,7 +38,6 @@ public class Attacker : MonoBehaviour
     RaycastHit rayHit;
     void Start()
     {
-        //GetComponentInChildren<Animator>().GetComponentInChildren<AnimationClip>().AddEvent(Event);
         anim = GetComponentInChildren<Animator>();
         Magic = GetComponentInChildren<ParticleSystem>();
         lineOne = GetComponent<LineRenderer>();
@@ -47,19 +46,11 @@ public class Attacker : MonoBehaviour
             Magic.Stop();
         }
     }
-
-    //private void Update()
-    //{
-    //    Attack();
-    //}
-
     IEnumerator StopMagic()
     {
         yield return new WaitForSeconds(1.0f);
         Magic.Stop();
     }
-
-
     public void MagicAttack()
     {
         if (attacktype == AttackType.wizard && isActiveController)
@@ -77,69 +68,16 @@ public class Attacker : MonoBehaviour
     {
         isAttacking = false;
     }
-
-
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Mouse0))
-        {
-            Slash();
-        }
-    }
-    public void Slash()
-    {
-        RaycastHit hit;
-
-        Ray ray = new Ray(muzzle.transform.position, muzzle.transform.forward);
-        if (Physics.Raycast(ray, out hit, range))
-        {
-
-            if (gameObject.transform.tag == "Knight")
-            {
-                ImpactReciever impact = hit.transform.gameObject.GetComponent<ImpactReciever>();
-                if (impact)
-                {
-                    impact.AddImpact(ray.direction, force);
-                }
-            }
-            if (gameObject.transform.tag == "Wizard")
-            {
-                hit.transform.gameObject.GetComponent<CharacterController>().enabled = false;
-                hit.transform.gameObject.GetComponentInChildren<MeshRenderer>().enabled = true;
-                hit.transform.gameObject.GetComponentInChildren<BoxCollider>().enabled = true;
-                hit.transform.gameObject.GetComponent<Attacker>().enabled = false;
-                hit.transform.gameObject.GetComponent<Death>().Dead();
-            }
-            if (gameObject.transform.tag == "Archer")
-            {
-
-            }
-        }
-
-
-
-    }
-
-
     private void FixedUpdate()
     {
-
         Debug.DrawRay(muzzle.transform.position, muzzle.transform.forward * force);
-
-        lineOne.SetPosition(0, muzzle.transform.position);
-        lineOne.SetPosition(1, muzzle.transform.forward * 1000);
-
         if (RecivedPlayerController)
         {
-
-
             if (impact.magnitude > 0.2F) RecivedPlayerController.Move(impact * Time.deltaTime);
             // consumes the impact energy each cycle:
             impact = Vector3.Lerp(impact, Vector3.zero, 5 * Time.fixedDeltaTime);
         }
-
     }
-
     public void AddImpact(Vector3 dir, float force)
     {
         dir.Normalize();
@@ -147,38 +85,47 @@ public class Attacker : MonoBehaviour
         impact += dir.normalized * force / mass;
     }
 
-
     public void Attack()
     {
-        Ray ray = new Ray(muzzle.transform.position, muzzle.transform.forward);
-
-        if (Physics.Raycast(muzzle.transform.position, muzzle.transform.forward, out rayHit))
-        {
-            RecivedPlayerController = rayHit.transform.GetComponent<CharacterController>();
-            if (RecivedPlayerController)
-            {
-                AddImpact(muzzle.transform.forward, force);
-
-            }
-        }
-
         if (!isAttacking && /*Input.GetKeyDown(KeyCode.Mouse0) */isActiveController)
         {
             StartAttacking();
             anim.SetTrigger("Attack");
-            Ray ray1 = new Ray(transform.position, transform.forward);
+
             RaycastHit hit;
-            if (Physics.Raycast(ray1, out hit, 5.0f))
+
+            Ray ray = new Ray(muzzle.transform.position, muzzle.transform.forward);
+            if (Physics.Raycast(ray, out hit, range))
             {
-                if (hit.transform.tag == "Archer" || hit.transform.tag == "wizard")
+                RecivedPlayerController = hit.transform.GetComponent<CharacterController>();
+                if (RecivedPlayerController)
                 {
-                    hit.transform.position += transform.forward * 5.0f;
+                    if (gameObject.transform.tag == "Knight")
+                    {
+                        AddImpact(muzzle.transform.forward, force);
+                        FindObjectOfType<AudioManager>().playAudio("SwordHit");
+                        hit.transform.gameObject.GetComponent<Death>().Dead();
+                    }
+                    if (gameObject.transform.tag == "Wizard")
+                    {
+                        Debug.Log(hit.transform.gameObject.name);
+                        FindObjectOfType<AudioManager>().playAudio("Ice");
+                        MagicAttack();
+                        hit.transform.gameObject.GetComponent<CharacterController>().enabled = false;
+                        hit.transform.gameObject.GetComponentInChildren<MeshRenderer>().enabled = true;
+                        hit.transform.gameObject.GetComponentInChildren<BoxCollider>().enabled = true;
+                        hit.transform.gameObject.GetComponent<Attacker>().enabled = false;
+                        hit.transform.gameObject.GetComponent<Death>().Dead();
+                    }
+                    if (gameObject.transform.tag == "Archer")
+                    {
+                        AddImpact(muzzle.transform.forward, force);
+                        FindObjectOfType<AudioManager>().playAudio("ArrowHit");
+                        hit.transform.gameObject.GetComponent<Death>().Dead();
+                    }
                 }
             }
-            if (attacktype == AttackType.wizard)
-            {
-                MagicAttack();
-            }
+
             FinishAttacking();
         }
     }

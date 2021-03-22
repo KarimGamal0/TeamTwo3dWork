@@ -32,9 +32,8 @@ public class Winner : MonoBehaviour
     {
         Debug.Log("won");
         Am.playAudio("Win");
-        SceneManager.LoadScene("LevelSelection");
+        SceneManager.LoadScene("LevelSelectionw");
     }
-    // Update is called once per frame
     void Update()
     {
         if(isDeadArcher.state&& isDeadKnight.state&& isDeadWizard.state)

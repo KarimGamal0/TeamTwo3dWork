@@ -48,6 +48,7 @@ public class Jump : MonoBehaviour
 
     public void JumpAction()
     {
+        FindObjectOfType<AudioManager>().playAudio("Jump");
         anim.SetBool("isRunning", false);
         velocity.y = Mathf.Sqrt(jumpHeight * -2 * gravity);
     }

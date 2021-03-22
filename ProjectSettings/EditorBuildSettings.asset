@@ -13,5 +13,8 @@ EditorBuildSettings:
     guid: 12339b9352a2b8c42a830a794be8d3a0
   - enabled: 1
     path: Assets/___SacrificeWho/Scenes/Level1.unity
-    guid: 14b289f1cbf61564ca740cbfe7dae22f
+    guid: e71f6dd287898074084ac0fc8609e902
+  - enabled: 1
+    path: Assets/___SacrificeWho/Scenes/Level2.unity
+    guid: 1472712a577d98e48bfcfbdcf77b310a
   m_configObjects: {}

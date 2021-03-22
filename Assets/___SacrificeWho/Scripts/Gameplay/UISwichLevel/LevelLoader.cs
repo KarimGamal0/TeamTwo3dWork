@@ -28,8 +28,7 @@ public class LevelLoader : MonoBehaviour
 
     }
 
-    // Update is called once per frame
-    private void Update()
+    void Update()
     {
         if (Application.platform == RuntimePlatform.Android)
         {
@@ -43,6 +42,8 @@ public class LevelLoader : MonoBehaviour
             }
         }
     }
+    // Update is called once per frame
+
 
     public void ShiftNext10Levels()
     {

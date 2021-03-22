@@ -12,6 +12,8 @@ GameObject:
   - component: {fileID: 1950108319080693462}
   - component: {fileID: 7067215519057166267}
   - component: {fileID: 7067215519057166264}
+  - component: {fileID: 244408046712125212}
+  - component: {fileID: 3960800125586419934}
   m_Layer: 0
   m_Name: The Mangleer
   m_TagString: Untagged
@@ -49,8 +51,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2.5424542, y: 2.4205484, z: 0.3657817}
-  m_Center: {x: -0.030786397, y: 1.1468716, z: -0.0033243436}
+  m_Size: {x: 1.316394, y: 2.5573268, z: 0.3657817}
+  m_Center: {x: 0.005962919, y: 1.2152601, z: -0.0033243448}
 --- !u!95 &7067215519057166267
 Animator:
   serializedVersion: 3
@@ -82,7 +84,37 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2eb21c0e83084984fa2dcac5ad2dcb1c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  killCharcterSO: {fileID: 0}
+  killKnightSO: {fileID: 0}
+  killArcherSO: {fileID: 0}
+  killWizardSO: {fileID: 0}
+--- !u!136 &244408046712125212
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 982218415360634575}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.29214346
+  m_Height: 3.0665674
+  m_Direction: 1
+  m_Center: {x: -1.0166965, y: 1.01517, z: -4.5616705e-15}
+--- !u!136 &3960800125586419934
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 982218415360634575}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.24999584
+  m_Height: 3.0665674
+  m_Direction: 1
+  m_Center: {x: 1.008094, y: 1.01517, z: 4.643315e-15}
 --- !u!1 &1015861366082974833
 GameObject:
   m_ObjectHideFlags: 0

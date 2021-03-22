@@ -5,7 +5,7 @@ using UnityEngine;
 public class JoystickThirdPersonController : MonoBehaviour
 {
     internal Animator anim;
-    [SerializeField]internal bool isActive = false;
+    [SerializeField] internal bool isActive = false;
     [SerializeField] public Transform player;
     [SerializeField] public CharacterController controller;
     [SerializeField] Camera cam;
@@ -20,10 +20,10 @@ public class JoystickThirdPersonController : MonoBehaviour
     }
     void Update()
     {
-        if(isActive)
+        if (isActive)
         {
-        Move();
-        }    
+            Move();
+        }
     }
     void Move()
     {
@@ -33,7 +33,6 @@ public class JoystickThirdPersonController : MonoBehaviour
         if (player != null)
         {
             forward = player.TransformDirection(Vector3.forward);
-            Debug.Log(isWalking);
             anim.SetBool("isRunning", isWalking);
         }
     }
@@ -42,13 +41,13 @@ public class JoystickThirdPersonController : MonoBehaviour
         Quaternion rotation = Quaternion.LookRotation(movement.value.normalized);
         if (rotation.eulerAngles.magnitude > 0 && isActive)
         {
-            player.rotation = Quaternion.Slerp(player.rotation,rotation,Time.smoothDeltaTime*turnSmoothTime);
+            player.rotation = Quaternion.Slerp(player.rotation, rotation, Time.smoothDeltaTime * turnSmoothTime);
         }
         controller.Move(transform.forward * anim.deltaPosition.magnitude * speed);
     }
     private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.red;
-        Gizmos.DrawRay(transform.position, transform.forward*10000);
+        Gizmos.DrawRay(transform.position, transform.forward * 10000);
     }
 }

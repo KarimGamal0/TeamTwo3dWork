@@ -41,7 +41,6 @@ public class ThirdPersonController : MonoBehaviour
         if (player != null)
         {
             forward = player.TransformDirection(Vector3.forward);
-            Debug.Log(isWalking);
             anim.SetBool("isRunning", isWalking);
         }
     }
